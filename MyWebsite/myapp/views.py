@@ -4,7 +4,7 @@ from .models import Book
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello, world!")
+    return render(request, 'Index.html')
 
 def book_by_id(request, book_id):
     book = Book.objects.get(pk=book_id)
