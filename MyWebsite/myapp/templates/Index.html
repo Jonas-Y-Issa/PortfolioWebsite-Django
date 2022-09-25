@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Developer Jonas</title>
+  <style type="text/css">
+    .body_foreground { color: #ffffff; }
+    .body_background { background-color: #232323; }
+    .inv_foreground { color: #000000; }
+    .inv_background { background-color: #ffffff; }
+    .center {
+      text-align: center;
+    }
+
+    /* Header */
+    header {
+      margin-left: 50px;
+      margin-right: 50px;
+      color: #00ff9a;
+      font-size: 50px;
+      
+    }
+    ol { 
+      display: flex;
+    }
+    li { 
+      margin: 20px; 
+      font-size: 15px;  
+    }
+
+    .navigatestyle {
+       display: flex;
+      justify-content: space-between; 
+      align-items: center;
+    }
+    
+    .navtext { 
+      color: white; 
+      text-decoration: none; 
+      font-size: 15px; 
+      font-family: "Courier New";
+    }
+    
+    @font-face{
+      font-family: Montserrat;
+      src:url('/myapp/static/fonts/Montserrat.ttf');
+
+    }
+
+    .typeout { color: #00ff9a;
+    align-text: left;
+    display: inline-block;
+    font-family: Montserrat;
+    text-decoration: none; 
+  }
+    
+
+    /* Footer */
+    footer {
+    bottom: 0;
+    color: #707070;
+    margin-top: auto;
+    position: fixed
+    font-size: small;
+    }
+
+    .ansi1 { font-weight: bold; font-size: 13px;}
+    .ansi2 { color: #00ff9a; }
+    .ansi3 { font-size: 7px; }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .flex-item-footer {
+      margin-top: auto;
+      flex: 33%;
+    }
+    .pushright {
+      float: right;
+      }
+
+
+
+
+
+
+
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-centre, .flex-item-left {
+    flex: 100%;
+  }
+}
+
+
+
+  </style>
+</head>
+<!--{% load static %}-->
+<script type="text/javascript" src="https://typewriter.luukdev.repl.co/TypeWriter.js"></script>
+<script src="{% static 'typing.js' %}" defer></script>
+
+<body class="body_foreground body_background" style="font-size: normal;">
+<header><nav class="navigatestyle">
+  <div style="color:#444444">[<a href="" class="typeout" id="typethis"></a>]</div>
+    <div>
+        <ol >
+    <li><a class="navtext" href="#">About Me</a></li>
+    <li><a class="navtext" href="#">Projects</a></li>
+    <li><a class="navtext" href="#">Work</a></li>
+    <li><a class="navtext" href="#">Resume</a></li>
+    <li><a class="navtext" href="#">Contact</a></li>
+        </ol>
+    </div>
+</nav>
+</header>
+
+
+
+  <main>
+    <pre>
+    <p class="center">  Hi, My name is "Jonas" Younes Issa
+      Welcome to my website, hosted on my raspberry pi.</p></pre>
+  
+  
+  
+    <p class="ansi1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde sunt, eaque optio id nostrum ullam voluptatum incidunt modi autem nulla nihil, voluptatibus iusto consectetur. Est quas libero illum dolore dicta?</p>
+</main>
+
+    <script type="text/javascript">
+      new TypeWriter(`#typethis`, {
+        cursor: {
+          speed: 800,
+          size: 'larger',
+          id: 'Some_TypeWriter_CSS',
+          enabled: true
+        },
+        timeout: 100
+      })
+      .write(`developerjonas.com`)
+      .start();
+    </script>
+</body>
+    <footer class="flex-container">
+        <div class="flex-item-footer">
+<pre class="ansi3">       _,met$$$$$gg.
+    ,g$$$$$$$$$$$$$$$P.
+  ,g$$P"     """Y$$.".
+ ,$$P'              `$$$.
+',$$P       ,ggs.     `$$b:
+`d$$'     ,$P"'   <span class="ansi2">.</span>    $$$
+ $$P      d$'     <span class="ansi2">,</span>    $$P
+ $$:      $$.   <span class="ansi2">-</span>    ,d$$'
+ $$;      Y$b._   _,d$P'
+ Y$$.    <span class="ansi2">`.</span>`"Y$$$$P"'
+ `$$b      <span class="ansi2">"-.__</span>
+  `Y$$
+   `Y$$.
+     `$$b.
+       `Y$$b.
+          `"Y$b._
+              `"""</pre>
+
+        </div>
+
+                <div class="flex-item-footer bottom center">
+                    <pre>Designed, Developed & Deployed</pre>
+                    <pre>by Younes Issa</pre>
+            </div>
+
+        <div class="flex-item-footer"><div class="pushright"><pre>    -------------------------
+    <span class="ansi1 ansi2">OS</span>:       Debian GNU/Linux 11
+    <span class="ansi1 ansi2">Host</span>:     Raspberry Pi 4 Model B Rev 1.4
+    <span class="ansi1 ansi2">Kernel</span>:   5.XX.XX
+    <span class="ansi1 ansi2">Shell</span>:    bash
+    <span class="ansi1 ansi2">CPU</span>:      BCM2835 (4) @ 1.800GHz
+    <span class="ansi1 ansi2">Memory</span>:   7812MiB
+            </pre></div></div>
+</footer>
+
+</html>
