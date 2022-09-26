@@ -29,7 +29,7 @@ class TypeWriter{
         const cursor = this.options.cursor || defaultcursor;
         const stylesheet = document.createElement(`style`);
         stylesheet.type = "text/css";
-        stylesheet.innerHTML = `#typewriter-effect-${this.id}{font-size:${cursor.size || defaultcursor.size};animation:TypeWriter ${(cursor.speed || defaultcursor.speed)/1000}s infinite;}@keyframes TypeWriter{0%{opacity: 0;}50%{opacity: 1;}100%{opacity: 0;}}`;
+        stylesheet.innerHTML = `#typewriter-effect-${this.id}{animation:TypeWriter ${(cursor.speed || defaultcursor.speed)/1000}s infinite;}@keyframes TypeWriter{0%{opacity: 0;}50%{opacity: 1;}100%{opacity: 0;}}`;
         stylesheet.id = cursor.id || defaultcursor.id;
         if((cursor['enabled'] || defaultcursor.enabled) === true) document.head.appendChild(stylesheet);
     }

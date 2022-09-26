@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +12,7 @@
     .center {
       text-align: center;
     }
-
+    {% load static %}
     /* Header */
     header {
       margin-left: 50px;
@@ -22,6 +23,7 @@
     }
     ol { 
       display: flex;
+      padding-inline-start: 0px;
     }
     li { 
       margin: 20px; 
@@ -48,10 +50,9 @@
     }
 
     .typeout { color: #00ff9a;
-    align-text: left;
-    display: inline-block;
     font-family: Montserrat;
     text-decoration: none; 
+
   }
     
 
@@ -98,10 +99,7 @@
 
   </style>
 </head>
-<!--{% load static %}-->
-<script type="text/javascript" src="https://typewriter.luukdev.repl.co/TypeWriter.js"></script>
-<script src="{% static 'typing.js' %}" defer></script>
-
+<script type="text/javascript" src="../static/Typewriter.js"></script>
 <body class="body_foreground body_background" style="font-size: normal;">
 <header><nav class="navigatestyle">
   <div style="color:#444444">[<a href="" class="typeout" id="typethis"></a>]</div>
