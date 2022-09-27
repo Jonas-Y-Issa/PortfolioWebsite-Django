@@ -5,56 +5,73 @@
   <meta charset="UTF-8">
   <title>Developer Jonas</title>
   <style type="text/css">
+    
+    {% load static %}
+
+    .body_background { background-color: #232323; }    
     .body_foreground { color: #ffffff; }
-    .body_background { background-color: #232323; }
-    .inv_foreground { color: #000000; }
-    .inv_background { background-color: #232323; }
+    
+    @font-face{
+      font-family: Montserrat;
+      src:url('../static/fonts/Montserrat.ttf');
+
+    }
+
     .center {
       text-align: center;
     }
-    {% load static %}
+
     /* Header */
     header {
       margin-left: 50px;
       margin-right: 50px;
       color: #00ff9a;
-      font-size: 50px;
-      
+      font-size: 50px;  
     }
+
     ol { 
       display: flex;
       padding-inline-start: 0px;
+      border-bottom: 1px solid grey;
     }
+
     li { 
       margin: 20px; 
       font-size: 15px;  
     }
 
-    .navigatestyle {
+    .navigate_style {
        display: flex;
       justify-content: space-between; 
       align-items: center;
     }
     
-    .navtext { 
+    .nav_text {
       color: white; 
       text-decoration: none; 
       font-size: 15px; 
       font-family: "Courier New";
     }
     
-    @font-face{
-      font-family: Montserrat;
-      src:url('/myapp/static/fonts/Montserrat.ttf');
 
-    }
-
-    .typeout { color: #00ff9a;
+    .type_out { color: #00ff9a;
     font-family: Montserrat;
     text-decoration: none; 
 
   }
-    
+    /* Body */
+    .aboutMe {
+      font-size: 60px;
+      text-align: left;
+      font-weight: 600;
+
+    }
+
+    img.aboutMe {
+      margin-top: auto;
+      height: 70px;
+      bottom: 0;
+    }
 
     /* Footer */
     footer {
@@ -77,23 +94,9 @@
       margin-top: auto;
       flex: 33%;
     }
-    .pushright {
+    .push_right {
       float: right;
       }
-
-
-
-
-
-
-
-
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 800px) {
-  .flex-item-right, .flex-item-centre, .flex-item-left {
-    flex: 100%;
-  }
-}
 
   </style>
 
@@ -105,15 +108,15 @@
 <body class="body_foreground body_background" style="font-size: normal;">
   
 
-<header><nav class="navigatestyle">
-  <div style="color:#444444">[<a href="" class="typeout" id="typethis"></a>]</div>
+<header><nav class="navigate_style">
+  <div style="color:#444444">[<a href="" class="type_out" id="typethis"></a>]</div>
     <div>
-        <ol >
-    <li><a class="navtext" href="#">About Me</a></li>
-    <li><a class="navtext" href="#">Projects</a></li>
-    <li><a class="navtext" href="#">Work</a></li>
-    <li><a class="navtext" href="#">Resume</a></li>
-    <li><a class="navtext" href="#">Contact</a></li>
+        <ol>
+    <li><a class="nav_text" href="#">About Me</a></li>
+    <li><a class="nav_text" href="#">Projects</a></li>
+    <li><a class="nav_text" href="#">Work</a></li>
+    <li><a class="nav_text" href="#">Resume</a></li>
+    <li><a class="nav_text" href="#">Contact</a></li>
         </ol>
     </div>
 </nav>
@@ -122,13 +125,13 @@
 
 
   <main>
-    <pre>
-    <p class="center">  Hi, My name is "Jonas" Younes Issa
-      Welcome to my website, hosted on my raspberry pi.</p></pre>
-  
-  
-  
-    <p class="ansi1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde sunt, eaque optio id nostrum ullam voluptatum incidunt modi autem nulla nihil, voluptatibus iusto consectetur. Est quas libero illum dolore dicta?</p>
+      <pre class="aboutMe"> <span style="color:grey">Hi, My name is</span>
+  <span style="color:#00ff9a">Younes "Jonas" Issa</span>
+    I Make Things..
+        <!--<img class="aboutMe" src="https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png">--></pre>
+
+
+
 </main>
 
     <script type="text/javascript">
@@ -172,14 +175,14 @@
                     <pre>by Younes Issa</pre>
             </div>
 
-        <div class="flex-item-footer"><div class="pushright"><pre>    -------------------------
+        <div class="flex-item-footer"><div class="push_right "><pre>    -------------------------
     <span class="ansi1 ansi2">OS</span>:       Debian GNU/Linux 11
     <span class="ansi1 ansi2">Host</span>:     Raspberry Pi 4 Model B Rev 1.4
     <span class="ansi1 ansi2">Kernel</span>:   5.XX.XX
     <span class="ansi1 ansi2">Shell</span>:    bash
     <span class="ansi1 ansi2">CPU</span>:      BCM2835 (4) @ 1.800GHz
-    <span class="ansi1 ansi2">Memory</span>:   7812MiB
-            </pre></div></div>
-</footer>
+    <span class="ansi1 ansi2">Memory</span>:   7812MiB</pre></div></div>
+
+    </footer>
 
 </html>
