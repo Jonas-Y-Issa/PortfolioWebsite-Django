@@ -1,0 +1,13 @@
+.body_background { background-color: #232323; }    
+.body_foreground { color: #ffffff; }
+
+@font-face{
+  font-family: Montserrat;
+  src:url('../static/fonts/Montserrat.ttf');
+
+}
+
+.center {
+  text-align: center;
+}
+
