@@ -2,7 +2,7 @@
 footer {
   font-size: small;
   color: #636363;
-  position: absolute;
+  position: static;
   bottom: 0;
   width: 100%;
   height: 50px;
