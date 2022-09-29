@@ -3,16 +3,20 @@
   font-size: 70px;
   font-weight: 600;
   font-family: "Courier New";
+  z-index: 1;
 }
 .aboutMe>span:nth-child(1){
 color: #5c5c5c;
+
 }
 .aboutMe>span:nth-child(2){
   color:#04AA6D;
+
 }
 
 .aboutMe>span:nth-child(3){
   color:#00c576;
+
 }
 
 img.aboutMe {
