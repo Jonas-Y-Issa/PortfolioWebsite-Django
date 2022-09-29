@@ -13,6 +13,9 @@
     color:#00a7b3;
   
   }
+  .light-mode .face{
+    background-color: #e0e0e0;
+}
 
   /*Header*/
 .light-mode li::marker{
