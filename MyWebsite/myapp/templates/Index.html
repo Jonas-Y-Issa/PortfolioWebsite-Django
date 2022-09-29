@@ -4,73 +4,48 @@
 <head>
   <meta charset="UTF-8">
   <title>Developer Jonas</title>
-
-  <style type="text/css">
-    
-    /*{% load static %}*/
-
-      .button4 {border-radius: 12px;}
-      .button {
-        background-color: #04AA6D;
-        border: none;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-      }
-  </style>
-
-<link rel=”stylesheet” type=”text/css” href="../static/css/Body.css">
-<link rel=”stylesheet” type=”text/css” href=../static/css/Header.css>
-<link rel=”stylesheet” type=”text/css” href=../static/css/Footer.css>
-<link rel=”stylesheet” type=”text/css” href=../static/css/General.css>
-<link rel="icon" type="image/x-icon" href="../static/images/Logo.svg">
+  <link rel="stylesheet" type="text/css" href="../static/css/Main.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/Footer.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/General.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/Header.css">
+  <link rel="icon" type="image/x-icon" href="../static/images/Logo.svg">
 </head>
 
 <script type="text/javascript" src="../static/Typewriter.js"></script>
-<body class="body_foreground body_background" style="font-size: normal;">
+
+<body class="body_ground">
+<button class="button button4" onclick="myFunction();"></button>
   
-<header id="header"><nav class="navigate_style">
-  <div style="color:#444444">[<a href="" class="type_out" id="typethis"></a>]</div>
+<header><nav class="navigate_style">
+  <div>[<a class="ansi2" href="" id="typethis"></a>]</div>
     <div>
-        <ol id="borderbottom">
-    <li><a class="nav_text" href="#">About Me</a></li>
-    <li><a class="nav_text" href="#">Projects</a></li>
-    <li><a class="nav_text" href="#">Work</a></li>
-    <li><a class="nav_text" href="#">Resume</a></li>
-    <li><a class="nav_text" href="#">Contact</a></li>
+        <ol class="nav_text">
+    <li><a href="#">About Me</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Work</a></li>
+    <li><a href="#">Resume</a></li>
+    <li><a href="#">Contact</a></li>
         </ol>
     </div>
 </nav>
 </header>
-<button class="button button4" onclick="myFunction();">12px</button>
 
   <main>
+<pre class="aboutMe">
+  <span>Hi, My name is</span>
+  <span>  Younes</span><span> "Jonas" Issa</span>
+  <span>    I Make Things..</span>
+</pre>
 
-      <pre class="aboutMe">
-
- <span style="color:#444444">Hi, My name is</span>
-  <span style="color:#00a564">Younes </span><span style="color:#00ff9a">"Jonas" Issa</span>
-    I Make Things..
-
-
-
-
-
-
-
-      </pre>
-      </main>
+  </main>
 
 
 
     <script type="text/javascript">
       function myFunction() {
         document.body.classList.toggle("light-mode");
-        
+        document.getElementById("navtext").classList.toggle("light-mode");
+
       }
 
       new TypeWriter(`#typethis`, {
@@ -86,9 +61,9 @@
       .start();
     </script>
 </body>
-    <footer class="flex-container">
+    <footer class="flex-container" >
         <div class="flex-item-footer">
-<pre class="ansi3">       _,met$$$$$gg.
+<pre style="font-size: 7px">       _,met$$$$$gg.
     ,g$$$$$$$$$$$$$$$P.
   ,g$$P"     """Y$$.".
  ,$$P'              `$$$.
@@ -108,18 +83,18 @@
 
         </div>
 
-                <div class="flex-item-footer bottom center">
+                <div class="flex-item-footer">
                     <pre>Designed, Developed & Deployed</pre>
                     <pre>by Younes Issa</pre>
             </div>
 
         <div class="flex-item-footer"><div class="push_right "><pre>    -------------------------
-    <span class="ansi1 ansi2">OS</span>:       Debian GNU/Linux 11
-    <span class="ansi1 ansi2">Host</span>:     Raspberry Pi 4 Model B Rev 1.4
-    <span class="ansi1 ansi2">Kernel</span>:   5.XX.XX
-    <span class="ansi1 ansi2">Shell</span>:    bash
-    <span class="ansi1 ansi2">CPU</span>:      BCM2835 (4) @ 1.800GHz
-    <span class="ansi1 ansi2">Memory</span>:   7812MiB</pre></div></div>
+    <span>OS</span>:       Debian GNU/Linux 11
+    <span>Host</span>:     Raspberry Pi 4 Model B Rev 1.4
+    <span>Kernel</span>:   5.XX.XX
+    <span>Shell</span>:    bash
+    <span>CPU</span>:      BCM2835 (4) @ 1.800GHz
+    <span>Memory</span>:   7812MiB</pre></div></div>
 
     </footer>
 

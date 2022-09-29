@@ -1,9 +1,7 @@
 /* Footer */
 footer {
 bottom: 0;
-color: #707070;
 margin-top: auto;
-position: fixed;
 font-size: small;
 }
 footer:after {
@@ -16,9 +14,9 @@ margin-left: 10%;
 border-top: solid 1px grey;
 }
 
-.ansi1 { font-weight: bold; font-size: 13px;}
-.ansi2 { color: #00ff9a; }
-.ansi3 { font-size: 7px; }
+.push_right>pre>span { font-weight: bold; 
+  font-size: 13px;
+  color: #00ff9a; }
 
 .flex-container {
   display: flex;
@@ -27,6 +25,9 @@ border-top: solid 1px grey;
 .flex-item-footer {
   margin-top: auto;
   flex: 33%;
+}
+.flex-item-footer:nth-child(2){
+  text-align: center;
 }
 .push_right {
   float: right;
