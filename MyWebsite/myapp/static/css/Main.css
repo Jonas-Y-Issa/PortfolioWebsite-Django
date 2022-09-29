@@ -1,4 +1,5 @@
 .aboutMe {
+  position: fixed;
   font-size: 70px;
   font-weight: 600;
   font-family: "Courier New";
@@ -11,7 +12,7 @@ color: #5c5c5c;
 }
 
 .aboutMe>span:nth-child(3){
-  color:#00ff9a;
+  color:#00c576;
 }
 
 img.aboutMe {

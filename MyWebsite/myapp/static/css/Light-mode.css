@@ -17,9 +17,12 @@
   /*Header*/
 .light-mode li::marker{
   color:#00a7b3;
-
-    
   }
+.light-mode .nav_text>li>a:hover {
+  color:#00a7b3;
+  text-decoration: underline; 
+}
+  
 
   /* Footer */
   .light-mode .ansi2{

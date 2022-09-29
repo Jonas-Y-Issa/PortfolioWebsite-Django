@@ -1,8 +1,11 @@
 /* Footer */
 footer {
-bottom: 0;
-margin-top: auto;
-font-size: small;
+  font-size: small;
+  color: #636363;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
 footer:after {
 content: ' ';
