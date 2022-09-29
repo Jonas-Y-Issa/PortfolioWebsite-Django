@@ -3,10 +3,16 @@
   src:url('../fonts/Montserrat.ttf');
 
 }
+@font-face{
+  font-family: GochiHand;
+  src:url('../fonts/GochiHand-Regular.ttf');
+
+}
 
 .body_ground { 
   background-color: #232323; 
   color: #ffffff; 
+  margin: 0px;
 }
 
 .ansi2 { color: #04AA6D; }
@@ -15,18 +21,3 @@
   text-align: center;
 }
 
-/*{ % load static %}*/
-
-.button4 {border-bottom-left-radius: 40px;}
-.button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 4px 2px;
-  float: right;
-  top: auto;
-}

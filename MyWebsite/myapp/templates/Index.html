@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Developer Jonas</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="../static/css/Main.css">
   <link rel="stylesheet" type="text/css" href="../static/css/Footer.css">
@@ -14,7 +14,10 @@
   <link rel="icon" type="image/x-icon" href="../static/images/Logo.svg">
 </head>
 
-<script type="text/javascript" src="../static/Typewriter.js"></script>
+<script type="text/javascript" src="../static/Typewriter.js">
+/*{ % load static %}*/
+
+</script>
 <script type="text/javascript" src="../static/headerscroll.js" defer></script>
 
 <body class="body_ground">
@@ -27,7 +30,6 @@
     <li><a href="#">Projects</a></li>
     <li><a href="#">Resume</a></li>
     <li><a href="#">Contact</a></li>
-<button class="button button4" onclick="myFunction();"></button>
 </ol>
 
     </div>
@@ -35,6 +37,12 @@
 </header>
 
   <main>
+  
+
+<button class="button button4" onclick="myFunction();">
+  <pre style="font-size: 20px; font-family: GochiHand; float: right;">
+ Dark/Light Mode! </pre>
+</button>
 <pre class="aboutMe">
 
   <span>Hi, My name is</span>
@@ -125,7 +133,7 @@
 
 
 
-  
+
 </pre>
 
   </main>
