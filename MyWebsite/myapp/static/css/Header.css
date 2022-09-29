@@ -1,12 +1,13 @@
 /* Header */
 header {
-  margin-left: 30px;
   margin-right: 30px;
   font-size: 50px;
   position: fixed;
   top: 0;
   transition: top 0.2s ease-in-out;
   width: 100%;
+  background-color: inherit;
+  opacity: 90%;  
 }
 
 .nav-up {
@@ -16,10 +17,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-}
-.nav_text{
-  margin-right: 50px;
 
 }
 .nav_text>li>a {
@@ -42,7 +39,8 @@ text-decoration: none;
 }
 div:has(> a#typethis)
 {
-  color:#444444
+  color:#444444;
+  padding-left:40px;
 }
 /*Nav Layout and Underscore*/
 ol { 
@@ -71,3 +69,17 @@ li::marker{
   color: #00ff9a;
   
   }
+
+.button4 {border-radius: 10px;
+  margin-right: 20px;
+}
+.button {
+  background-color: #04AA6D;
+  color: inherit;
+  border: none;
+  padding: 1px;
+  margin-top: 80px;
+  text-align: center;
+  text-decoration: none;
+  float: right;
+}
