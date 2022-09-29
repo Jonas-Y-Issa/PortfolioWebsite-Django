@@ -4,114 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <title>Developer Jonas</title>
+
   <style type="text/css">
     
-    {% load static %}
+    /*{% load static %}*/
 
-    .body_background { background-color: #232323; }    
-    .body_foreground { color: #ffffff; }
-    
-    @font-face{
-      font-family: Montserrat;
-      src:url('../static/fonts/Montserrat.ttf');
-
-    }
-
-    .center {
-      text-align: center;
-    }
-
-    /* Header */
-    header {
-      margin-left: 50px;
-      margin-right: 50px;
-      color: #00ff9a;
-      font-size: 50px;  
-    }
-
-    ol { 
-      display: flex;
-      padding-inline-start: 0px;
-      border-bottom: 1px solid grey;
-    }
-
-    li { 
-      margin: 20px; 
-      font-size: 15px;  
-    }
-
-    .navigate_style {
-       display: flex;
-      justify-content: space-between; 
-      align-items: center;
-    }
-    
-    .nav_text {
-      color: white; 
-      text-decoration: none; 
-      font-size: 15px; 
-      font-family: "Courier New";
-    }
-    
-
-    .type_out { color: #00ff9a;
-    font-family: Montserrat;
-    text-decoration: none; 
-
-  }
-    /* Body */
-    .aboutMe {
-      font-size: 60px;
-      text-align: left;
-      font-weight: 600;
-
-    }
-
-    img.aboutMe {
-      margin-top: auto;
-      height: 70px;
-      bottom: 0;
-    }
-
-    /* Footer */
-    footer {
-    bottom: 0;
-    color: #707070;
-    margin-top: auto;
-    position: fixed
-    font-size: small;
-    }
-
-    .ansi1 { font-weight: bold; font-size: 13px;}
-    .ansi2 { color: #00ff9a; }
-    .ansi3 { font-size: 7px; }
-
-    .flex-container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .flex-item-footer {
-      margin-top: auto;
-      flex: 33%;
-    }
-    .push_right {
-      float: right;
+      .button4 {border-radius: 12px;}
+      .button {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
       }
-
   </style>
 
-
+<link rel=”stylesheet” type=”text/css” href="../static/css/Body.css">
+<link rel=”stylesheet” type=”text/css” href=../static/css/Header.css>
+<link rel=”stylesheet” type=”text/css” href=../static/css/Footer.css>
+<link rel=”stylesheet” type=”text/css” href=../static/css/General.css>
 <link rel="icon" type="image/x-icon" href="../static/images/Logo.svg">
 </head>
 
 <script type="text/javascript" src="../static/Typewriter.js"></script>
 <body class="body_foreground body_background" style="font-size: normal;">
   
-
-<header><nav class="navigate_style">
+<header id="header"><nav class="navigate_style">
   <div style="color:#444444">[<a href="" class="type_out" id="typethis"></a>]</div>
     <div>
-        <ol>
+        <ol id="borderbottom">
     <li><a class="nav_text" href="#">About Me</a></li>
     <li><a class="nav_text" href="#">Projects</a></li>
     <li><a class="nav_text" href="#">Work</a></li>
@@ -121,20 +46,33 @@
     </div>
 </nav>
 </header>
-
-
+<button class="button button4" onclick="myFunction();">12px</button>
 
   <main>
-      <pre class="aboutMe"> <span style="color:grey">Hi, My name is</span>
-  <span style="color:#00ff9a">Younes "Jonas" Issa</span>
+
+      <pre class="aboutMe">
+
+ <span style="color:#444444">Hi, My name is</span>
+  <span style="color:#00a564">Younes </span><span style="color:#00ff9a">"Jonas" Issa</span>
     I Make Things..
-        <!--<img class="aboutMe" src="https://www.raspberrypi.org/app/uploads/2011/10/Raspi-PGB001.png">--></pre>
 
 
 
-</main>
+
+
+
+
+      </pre>
+      </main>
+
+
 
     <script type="text/javascript">
+      function myFunction() {
+        document.body.classList.toggle("light-mode");
+        
+      }
+
       new TypeWriter(`#typethis`, {
         cursor: {
           speed: 800,
