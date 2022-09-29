@@ -3,47 +3,55 @@ header {
   margin-left: 30px;
   margin-right: 30px;
   font-size: 50px;
-  color: #00ff9a;
 }
 
+/*Nav Layout and Underscore*/
 ol { 
   display: flex;
+  font-size: 15px;  
   padding-inline-start: 0px;
   position: relative;
-  text-decoration:none;
 }
 ol:after {
 content: ' ';
 text-decoration: none;
 position: absolute;
 width: 80%;
-height: 100%;
+bottom: 0px;
 left: 0;
 margin-left: 10%;
 border-bottom: solid 1px grey;
+
 }
 li { 
   margin: 20px; 
-  font-size: 15px;  
 }
-
+li::marker{
+  
+  color: #00ff9a;
+  
+  }
 
 .navigate_style {
-    display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav_text {
-  color: white;
+.nav_text>li>a {
+  color: inherit;
   text-decoration: none; 
   font-size: 15px; 
   font-family: "Courier New";
 }
 
 
-.type_out { color: #00ff9a;
+#typethis {
 font-family: Montserrat;
 text-decoration: none; 
 
+}
+div:has(> a#typethis)
+{
+  color:#444444
 }
