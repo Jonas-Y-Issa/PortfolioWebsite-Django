@@ -1,0 +1,36 @@
+/* Body */
+.light-mode{
+  background-color: #e0e0e0;
+  color:black;
+}
+
+/* Main */
+.light-mode .aboutMe>span:nth-child(2){
+    color:#006168;
+  }
+
+.light-mode .aboutMe>span:nth-child(3){
+    color:#00a7b3;
+  
+  }
+
+  /*Header*/
+.light-mode li::marker{
+  color:#00a7b3;
+
+    
+  }
+
+  /* Footer */
+  .light-mode .ansi2{
+    color:#00a7b3;
+  
+  }
+  .light-mode .push_right>pre>span { 
+    color:#00a7b3;
+  }
+
+  /* Button */
+  .light-mode .button{
+    background-color: #00a7b3;
+  }
