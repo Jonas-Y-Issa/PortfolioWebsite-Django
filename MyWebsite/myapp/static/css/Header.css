@@ -44,12 +44,20 @@ li::marker{
   font-size: 15px; 
   font-family: "Courier New";
 }
-
+.nav_text>li>a:hover {
+  color: #00ff9a;
+  text-decoration: underline; 
+  font-size: 15px; 
+  font-family: "Courier New";
+}
 
 #typethis {
 font-family: Montserrat;
 text-decoration: none; 
 
+}
+#typethis:hover{
+  text-decoration: underline; 
 }
 div:has(> a#typethis)
 {
