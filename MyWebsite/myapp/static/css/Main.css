@@ -7,8 +7,9 @@
 color: #5c5c5c;
 }
 .aboutMe>span:nth-child(2){
-  color:#00a564;
+  color:#04AA6D;
 }
+
 .aboutMe>span:nth-child(3){
   color:#00ff9a;
 }
