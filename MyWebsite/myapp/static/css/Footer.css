@@ -1,0 +1,33 @@
+/* Footer */
+footer {
+bottom: 0;
+color: #707070;
+margin-top: auto;
+position: fixed;
+font-size: small;
+}
+footer:after {
+content: ' ';
+text-decoration: none;
+position: absolute;
+width: 80%;
+left: 0;
+margin-left: 10%;
+border-top: solid 1px grey;
+}
+
+.ansi1 { font-weight: bold; font-size: 13px;}
+.ansi2 { color: #00ff9a; }
+.ansi3 { font-size: 7px; }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-item-footer {
+  margin-top: auto;
+  flex: 33%;
+}
+.push_right {
+  float: right;
+}
