@@ -6,37 +6,39 @@
 
 /* Main */
 .light-mode .aboutMe>span:nth-child(2){
-    color:#006168;
+    color:#b13f3b;
   }
 
 .light-mode .aboutMe>span:nth-child(3){
-    color:#00a7b3;
+    color:#df5853;
   
   }
   .light-mode .face{
     background-color: #e0e0e0;
 }
-
+.light-mode .svg{
+  fill: black;
+}
   /*Header*/
 .light-mode li::marker{
-  color:#00a7b3;
+  color:#df5853;
   }
 .light-mode .nav_text>li>a:hover {
-  color:#00a7b3;
+  color:#df5853;
   text-decoration: underline; 
 }
   
 
   /* Footer */
   .light-mode .ansi2{
-    color:#00a7b3;
+    color:#df5853;
   
   }
   .light-mode .push_right>pre>span { 
-    color:#00a7b3;
+    color:#df5853;
   }
 
   /* Button */
   .light-mode .button{
-    background-color: #00a7b3;
+    background-color: #df5853;
   }
