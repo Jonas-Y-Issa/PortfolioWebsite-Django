@@ -3,6 +3,7 @@ body {
   background-color: var(--dark-grey); 
   color: var(--dark-white); 
   margin: 0px;
+
 }
 
 .ansi2 { color: var(--green-bright);

@@ -9,6 +9,7 @@ header {
   background-color: inherit;
   opacity: 90%;  
   z-index: 1000;
+  height: var(--nav-height);
 }
 
 .nav-up {
@@ -18,7 +19,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 .nav_text>li>a {
   color: inherit;
@@ -27,7 +27,7 @@ header {
   font-family: "Courier New";
 }
 .nav_text>li>a:hover {
-  color: var(--footer-text);
+  color: var(--green-bright);
   text-decoration: underline; 
   font-size: 15px; 
   font-family: "Courier New";
@@ -75,8 +75,3 @@ li::marker{
   color: var(--green-bright);
   
   }
-
-.button4 {
-  height: 0px;
-  width: 0px;
-}
