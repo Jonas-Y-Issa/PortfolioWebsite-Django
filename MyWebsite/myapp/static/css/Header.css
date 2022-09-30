@@ -27,7 +27,7 @@ header {
   font-family: "Courier New";
 }
 .nav_text>li>a:hover {
-  color: #00ff9a;
+  color: var(--footer-text);
   text-decoration: underline; 
   font-size: 15px; 
   font-family: "Courier New";
@@ -40,12 +40,12 @@ text-decoration: none;
 
 }
 .svg{
-  fill: #e0e0e0;
+  fill: var(--dark-white);
 }
 
 div:has(> a#typethis)
 {
-  color:#444444;
+  color:var(--imprint-text);
   padding-left:40px;
 }
 /*Nav Layout and Underscore*/
@@ -72,7 +72,7 @@ li {
 }
 li::marker{
   
-  color: #00ff9a;
+  color: var(--green-bright);
   
   }
 

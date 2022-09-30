@@ -1,44 +1,44 @@
 /* Body */
 .light-mode{
-  background-color: #e0e0e0;
-  color:black;
+  background-color: var(--light-grey);
+  color:var(--light-black);
 }
 
 /* Main */
-.light-mode .aboutMe>span:nth-child(2){
-    color:#b13f3b;
+.light-mode .intro>span:nth-child(2){
+  color:var(--red-dark);
   }
 
-.light-mode .aboutMe>span:nth-child(3){
-    color:#b13f3b;
+.light-mode .intro>span:nth-child(3){
+    color:var(--red-dark);
   
   }
-  .light-mode .face{
-    background-color: #e0e0e0;
-}
+
 .light-mode .svg{
   fill: black;
 }
   /*Header*/
 .light-mode li::marker{
-  color:#df5853;
+  color:var(--red-bright);
   }
 .light-mode .nav_text>li>a:hover {
-  color:#df5853;
+  color:var(--red-bright);
   text-decoration: underline; 
 }
   
 
   /* Footer */
   .light-mode .ansi2{
-    color:#df5853;
+    color:var(--red-bright);
   
   }
   .light-mode .push_right>pre>span { 
-    color:#df5853;
+    color:var(--red-bright);
   }
 
   /* Button */
   .light-mode .button{
-    background-color: #df5853;
+    background-color: var(--red-bright);
   }
+
+  

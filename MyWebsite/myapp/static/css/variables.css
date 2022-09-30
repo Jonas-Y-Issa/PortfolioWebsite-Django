@@ -1,0 +1,22 @@
+@font-face{
+    font-family: Montserrat;
+    src:url('../fonts/Montserrat.ttf');
+  
+  }
+  @font-face{
+    font-family: GochiHand;
+    src:url('../fonts/GochiHand-Regular.ttf');
+  
+  }
+
+:root {
+    --dark-grey: #232323; 
+    --dark-white: #ffffff; 
+    --light-grey: #e0e0e0;
+    --light-black:#000000;
+    --green-bright: #00ff9a;
+    --green-dark: #04AA6D;
+    --red-bright: #df5853;
+    --red-dark: #b13f3b;
+    --imprint-text: #444444;
+}

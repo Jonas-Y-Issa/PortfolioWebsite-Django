@@ -1,7 +1,7 @@
 /* Footer */
 footer {
   font-size: small;
-  color: #636363;
+  color: var(--imprint-text);
   position: static;
   bottom: 0;
   width: 100%;
@@ -14,12 +14,12 @@ position: absolute;
 width: 80%;
 left: 0;
 margin-left: 10%;
-border-top: solid 1px grey;
+border-top: solid 1px var(--imprint-text);
 }
 
 .push_right>pre>span { font-weight: bold; 
   font-size: 13px;
-  color: #00ff9a; }
+  color: var(--green-bright); }
 
 
 .flex-container {
