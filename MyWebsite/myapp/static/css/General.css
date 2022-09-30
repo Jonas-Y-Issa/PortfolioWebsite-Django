@@ -1,24 +1,22 @@
-@font-face{
-  font-family: Montserrat;
-  src:url('../fonts/Montserrat.ttf');
 
-}
-@font-face{
-  font-family: GochiHand;
-  src:url('../fonts/GochiHand-Regular.ttf');
-
-}
-
-.body_ground { 
-  background-color: #232323; 
-  color: #ffffff; 
+body { 
+  background-color: var(--dark-grey); 
+  color: var(--dark-white); 
   margin: 0px;
 }
 
-.ansi2 { color: #00ff9a;
+.ansi2 { color: var(--green-bright);
  }
 
 .center {
   text-align: center;
 }
 
+section{
+  min-height: 100vh;
+
+}
+
+html {
+	scroll-behavior: smooth;
+}

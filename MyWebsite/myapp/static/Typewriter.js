@@ -130,3 +130,18 @@ class TypeWriter{
         });
     }
 }
+
+
+
+
+new TypeWriter(`#typethis`, {
+    cursor: {
+    speed: 800,
+    size: 'larger',
+    id: 'Some_TypeWriter_CSS',
+    enabled: true
+    },
+    timeout: 100
+})
+.write(`developerjonas.com`)
+.start();
