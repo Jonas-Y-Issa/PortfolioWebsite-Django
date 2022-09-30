@@ -38,6 +38,9 @@ text-decoration: none;
 
 
 }
+.svg{
+  fill: #e0e0e0;
+}
 div:has(> a#typethis)
 {
   color:#444444;
@@ -78,7 +81,7 @@ li::marker{
   background-color: #04AA6D;
   color: inherit;
   border: none;
-  padding: 1px;
+  padding: 20px;
   margin-top: 80px;
   text-align: center;
   text-decoration: none;
