@@ -2,6 +2,10 @@
 .light-mode{
   background-color: var(--light-grey);
   color:var(--light-black);
+  transition-property: color background-color;
+	transition-duration: var(--mode-speed-background) ;
+	transition-timing-function: linear;
+
 }
 .light-mode ::selection{
   color: white;
@@ -22,19 +26,17 @@
   width: 100%;
   
 }
-  /* Button */
-.light-mode .svg{
-  fill: black;
-  width:80%
-}
-pre> svg:hover>.svg{
-  fill: rgb(255, 255, 132);
+/* Cube */
+.light-mode .face{
+  background-color: var(--light-grey);
+	transition-property: color background-color;
+	transition-duration: var(--mode-speed-background) ;
+	transition-timing-function: linear;
 }
 
   /*Header*/
 .light-mode #typethis{
   color:var(--red-bright);
-
 }
 .light-mode li::marker{
   color:var(--red-bright);
@@ -42,10 +44,18 @@ pre> svg:hover>.svg{
 .light-mode .nav_text>li>a:hover {
   color: var(--light-grey);
   text-decoration: underline; 
-  background-color: var(--red-bright);
 }
   
-
+.light-mode .nav_text>li>a {
+  color: var(--light-black);
+  text-decoration: none; 
+  background:
+  conic-gradient(from -135deg at 100%  50%, var(--red-bright) 90deg, #0000 0) 
+    0  var(--p, 0%) / var(--s, 0%) 200% no-repeat,
+  conic-gradient(from -135deg at 1.1em 50%, rgba(0, 0, 0, 0) 90deg, var(--red-bright) 0) 
+    100% var(--p, 0%) / var(--s, 0%) 200% no-repeat;
+transition: .2s, background-position 0s;
+}
   /* Footer */
  
 .light-mode .push_right>pre>span { 
@@ -55,6 +65,14 @@ pre> svg:hover>.svg{
   color: var(--red-bright);
 }
 
+/* Button */
+.light-mode .svg{
+  fill: black;
+  width:80%
+}
+pre> svg:hover>.svg{
+  fill: rgb(255, 255, 132);
+}
 .lightbuttontext{
   z-index: 2; 
   position:relative; 

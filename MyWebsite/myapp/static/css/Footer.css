@@ -5,6 +5,7 @@ footer {
   position: static;
   bottom: 0;
   width: 100%;
+  background-color: inherit;
 }
 footer:after {
 content: ' ';
@@ -19,6 +20,8 @@ border-top: solid 1px var(--imprint-text);
   font-weight: bold; 
   font-size: var(--fs2);
   color: var(--green-bright); 
+  transition-property: color;
+  transition-duration: var(--mode-speed) ;
 }
 .flex-container {
   display: flex;
@@ -44,4 +47,6 @@ border-top: solid 1px var(--imprint-text);
 }
 .ansi1>span{
   color: var(--green-bright);
+  transition-property: color;
+  transition-duration: var(--mode-speed);
 }
