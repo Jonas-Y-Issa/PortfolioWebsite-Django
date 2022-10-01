@@ -1,19 +1,19 @@
 /* Header */
 header {
-  margin-right: 30px;
-  font-size: 50px;
+  background-color: inherit;
   position: fixed;
   top: 0;
-  transition: top 0.2s ease-in-out;
+  margin-right: 30px;
+  font-size: var(--fs-header);
+  height: var(--nav-height);
+  transition: transform 0.2s ease-in-out;
   width: 100%;
-  background-color: inherit;
   opacity: 90%;  
   z-index: 1000;
-  height: var(--nav-height);
 }
 
 .nav-up {
-  top: -100px;
+  transform: translateY(-100%);
 }
 .navigate_style {
   display: flex;
@@ -23,21 +23,20 @@ header {
 .nav_text>li>a {
   color: inherit;
   text-decoration: none; 
-  font-size: 15px; 
+  font-size: var(--fs3); 
   font-family: var(--font-main);
 }
 .nav_text>li>a:hover {
   color: var(--dark-grey);
   text-decoration: underline; 
   background-color: var(--green-bright);
-  font-size: 15px; 
   font-family: var(--font-main);
 }
 
 #typethis {
 font-family: var(--font-compliment);
 text-decoration: none; 
-
+color: var(--green-bright);
 
 }
 .svg{
@@ -52,7 +51,7 @@ div:has(> a#typethis)
 /*Nav Layout and Underscore*/
 ol { 
   display: flex;
-  font-size: 15px;  
+  font-size: var(--fs3);  
   padding-inline-start: 0px;
   position: relative;
 }
@@ -62,7 +61,6 @@ text-decoration: none;
 position: absolute;
 width: 80%;
 bottom: 0px;
-left: 0;
 margin-left: 10%;
 border-bottom: solid 1px grey;
 

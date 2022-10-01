@@ -1,7 +1,7 @@
 .intro {
   position: fixed;
-  font-size: 70px;
-  font-weight: 600;
+  font-size: var(--fs5);
+  font-weight: bold;
   font-family: var(--font-main);
   z-index: -1;
   top: 50%;
@@ -14,25 +14,11 @@
 .intro>span:nth-child(2){
   color:var(--green-dark);
 }
-
 .intro>span:nth-child(3){
   color:var(--green-dark);
 }
-
-img.intro {
-  margin-top: auto;
-  height: 70px;
-  bottom: 0;
-}
 .overlay{
-
   background-color: var(--dark-grey);
-  z-index: -2;
-  width: 100%;
-}
-.light-mode .overlay{
-
-  background-color: var(--light-grey);
   z-index: -2;
   width: 100%;
 }
