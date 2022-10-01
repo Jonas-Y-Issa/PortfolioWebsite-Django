@@ -13,11 +13,13 @@
 /* Intro */
 .light-mode .intro>span:nth-child(2){
   color:var(--red-dark);
+  text-shadow: 5px 5px 5px rgb(0, 0, 0);
+
   }
 
 .light-mode .intro>span:nth-child(3){
     color:var(--red-dark);
-  
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
   }
 .light-mode .overlay{
   background-color: var(--light-grey);
