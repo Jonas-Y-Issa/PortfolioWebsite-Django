@@ -2,7 +2,6 @@
 body { 
   background-color: var(--dark-grey); 
   color: var(--dark-white); 
-	transition-property: color background-color;
 	transition-duration: var(--mode-speed-background) ;
 	transition-timing-function: linear;
 }
@@ -13,9 +12,6 @@ body {
 section{
   min-height: 100vh;
 
-  transition-property: color background-color;
-	transition-duration: var(--mode-speed-background) ;
-	transition-timing-function: linear;
 }
 html {
 	scroll-behavior: smooth;

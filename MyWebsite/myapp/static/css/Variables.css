@@ -30,7 +30,6 @@
     --fs4: 15px;
     --fs5: 70px;
     --fs-header: 50px;
-    --mode-speed: .5s;
-    --mode-speed-background: 1s;
-  	transition-timing-function: linear !important;
+    --mode-speed: 1s;
+    --mode-speed-background: 2s;
 }

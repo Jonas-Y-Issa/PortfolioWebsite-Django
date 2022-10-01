@@ -2,7 +2,6 @@
 .light-mode{
   background-color: var(--light-grey);
   color:var(--light-black);
-  transition-property: color background-color;
 	transition-duration: var(--mode-speed-background) ;
 	transition-timing-function: linear;
 
