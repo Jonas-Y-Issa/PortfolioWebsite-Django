@@ -4,6 +4,7 @@ body {
   color: var(--dark-white); 
 	transition-duration: var(--mode-speed-background) ;
 	transition-timing-function: linear;
+  margin: 0;
 }
 ::selection{
   color: black;
