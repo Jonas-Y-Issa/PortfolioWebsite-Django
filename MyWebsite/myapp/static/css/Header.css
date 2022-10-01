@@ -24,17 +24,18 @@ header {
   color: inherit;
   text-decoration: none; 
   font-size: 15px; 
-  font-family: "Courier New";
+  font-family: var(--font-main);
 }
 .nav_text>li>a:hover {
-  color: var(--green-bright);
+  color: var(--dark-grey);
   text-decoration: underline; 
+  background-color: var(--green-bright);
   font-size: 15px; 
-  font-family: "Courier New";
+  font-family: var(--font-main);
 }
 
 #typethis {
-font-family: Montserrat;
+font-family: var(--font-compliment);
 text-decoration: none; 
 
 
