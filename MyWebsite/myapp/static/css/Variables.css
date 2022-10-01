@@ -23,4 +23,11 @@
     --font-main: "Courier New";
     --font-compliment: Montserrat;
     --font-hand: GochiHand;
+    --fs-ansi: 6px;
+    --fs1: 12px;
+    --fs2: 13px;
+    --fs3: 15px;
+    --fs4: 15px;
+    --fs5: 70px;
+    --fs-header: 50px;
 }

@@ -5,19 +5,14 @@ body {
   margin: 0px;
 
 }
-
-.ansi2 { color: var(--green-bright);
- }
-
-.center {
-  text-align: center;
+::selection{
+  color: black;
+  background-color: white;
 }
-
 section{
   min-height: 100vh;
 
 }
-
 html {
 	scroll-behavior: smooth;
 }

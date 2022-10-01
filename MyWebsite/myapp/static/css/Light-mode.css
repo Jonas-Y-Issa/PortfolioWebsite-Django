@@ -3,8 +3,11 @@
   background-color: var(--light-grey);
   color:var(--light-black);
 }
-
-/* Main */
+.light-mode ::selection{
+  color: white;
+  background-color: black;
+}
+/* Intro */
 .light-mode .intro>span:nth-child(2){
   color:var(--red-dark);
   }
@@ -13,19 +16,26 @@
     color:var(--red-dark);
   
   }
-
+.light-mode .overlay{
+  background-color: var(--light-grey);
+  z-index: -2;
+  width: 100%;
+  
+}
+  /* Button */
 .light-mode .svg{
   fill: black;
   width:80%
 }
-
 pre> svg:hover>.svg{
-
   fill: rgb(255, 255, 132);
-
 }
 
   /*Header*/
+.light-mode #typethis{
+  color:var(--red-bright);
+
+}
 .light-mode li::marker{
   color:var(--red-bright);
   }
@@ -37,22 +47,21 @@ pre> svg:hover>.svg{
   
 
   /* Footer */
-  .light-mode .ansi2{
-    color:var(--red-bright);
-  
-  }
-  .light-mode .push_right>pre>span { 
-    color:var(--red-bright);
-  }
+ 
+.light-mode .push_right>pre>span { 
+  color:var(--red-bright);
+}
+.light-mode .ansi1>span{
+  color: var(--red-bright);
+}
 
-
-  .lightbuttontext{
-    z-index: 2; 
-    position:relative; 
-    top:80px; 
-    right:20px; 
-    float: right; 
-    font-size: 15px; 
-    font-family: var(--font-hand); 
-    transform: rotateZ(25deg);
-  }
+.lightbuttontext{
+  z-index: 2; 
+  position:relative; 
+  top:80px; 
+  right:20px; 
+  float: right; 
+  font-size: var(--fs4); 
+  font-family: var(--font-hand); 
+  transform: rotateZ(25deg);
+}

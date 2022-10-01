@@ -1,11 +1,10 @@
 /* Footer */
 footer {
-  font-size: small;
+  font-size: var(--fs1);
   color: var(--imprint-text);
   position: static;
   bottom: 0;
   width: 100%;
-  height: 50px;
 }
 footer:after {
 content: ' ';
@@ -18,14 +17,13 @@ border-top: solid 1px var(--imprint-text);
 
 .push_right>pre>span { 
   font-weight: bold; 
-  font-size: 13px;
+  font-size: var(--fs2);
   color: var(--green-bright); 
 }
-
-
 .flex-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  height: auto;
 }
 .flex-item-footer {
   margin-top: auto;
@@ -36,4 +34,14 @@ border-top: solid 1px var(--imprint-text);
 }
 .push_right {
   float: right;
+  padding-right: 20px;
+}
+
+.ansi1{
+  font-size: var(--fs-ansi);
+  padding-left: 20px;
+
+}
+.ansi1>span{
+  color: var(--green-bright);
 }
