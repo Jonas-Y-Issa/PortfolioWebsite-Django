@@ -3,7 +3,7 @@
 	height: 70px;
 	transform-style: preserve-3d;
 	display: inline-block;
-	bottom:0;
+	bottom:auto;
 }
 .face{
     background-color: var(--dark-grey); 
