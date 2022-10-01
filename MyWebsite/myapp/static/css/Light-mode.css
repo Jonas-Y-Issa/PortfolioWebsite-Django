@@ -16,14 +16,23 @@
 
 .light-mode .svg{
   fill: black;
+  width:80%
 }
+
+pre> svg:hover>.svg{
+
+  fill: rgb(255, 255, 132);
+
+}
+
   /*Header*/
 .light-mode li::marker{
   color:var(--red-bright);
   }
 .light-mode .nav_text>li>a:hover {
-  color:var(--red-bright);
+  color: var(--light-grey);
   text-decoration: underline; 
+  background-color: var(--red-bright);
 }
   
 
@@ -36,9 +45,14 @@
     color:var(--red-bright);
   }
 
-  /* Button */
-  .light-mode .button{
-    background-color: var(--red-bright);
-  }
 
-  
+  .lightbuttontext{
+    z-index: 2; 
+    position:relative; 
+    top:80px; 
+    right:20px; 
+    float: right; 
+    font-size: 15px; 
+    font-family: var(--font-hand); 
+    transform: rotateZ(25deg);
+  }

@@ -12,14 +12,15 @@ content: ' ';
 text-decoration: none;
 position: absolute;
 width: 80%;
-left: 0;
 margin-left: 10%;
 border-top: solid 1px var(--imprint-text);
 }
 
-.push_right>pre>span { font-weight: bold; 
+.push_right>pre>span { 
+  font-weight: bold; 
   font-size: 13px;
-  color: var(--green-bright); }
+  color: var(--green-bright); 
+}
 
 
 .flex-container {
