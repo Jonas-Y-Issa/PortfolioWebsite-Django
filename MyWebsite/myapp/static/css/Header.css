@@ -21,18 +21,49 @@ header {
   align-items: center;
 
 }
+li { 
+  margin: 10px; 
+  counter-increment: item 1;
+  list-style: none;
+}
+
+li>a::before{
+  color: var(--green-bright);
+  content: counter(item) "[" ;
+  box-sizing: inherit;
+  transition-property: color;
+  transition-duration: var(--mode-speed);
+}
+li>a::after{
+  transition-property: color;
+  transition-duration: var(--mode-speed);
+  color: var(--green-bright);
+  content: "]" ;
+  box-sizing: inherit;
+}
+.nav_text>li>a:hover::before
+{
+  color: var(--dark-grey);
+  text-decoration: underline; 
+}.nav_text>li>a:hover::after
+{
+  color: var(--dark-grey);
+  text-decoration: underline; 
+}
 .nav_text>li>a {
   color: inherit;
   text-decoration: none; 
   font-size: var(--fs3); 
   font-family: var(--font-main);
-  line-height: 1.2em;
+  border-radius: 3px;
+  opacity: .8;
   background:
-    conic-gradient(from -135deg at 100%  50%, var(--green-bright) 90deg, #0000 0) 
+    conic-gradient(from -135deg at 100%  50%, var(--green-bright) 90deg, rgba(0, 0, 0, 0) 0) 
       0  var(--p, 0%) / var(--s, 0%) 200% no-repeat,
     conic-gradient(from -135deg at 1.1em 50%, rgba(0, 0, 0, 0) 90deg, var(--green-bright) 0) 
       100% var(--p, 0%) / var(--s, 0%) 200% no-repeat;
   transition: .2s, background-position 0s;
+
 }
 .nav_text>li>a:hover {
   color: var(--dark-grey);
@@ -42,7 +73,6 @@ header {
   --p: 100%;
   --s: calc(50% + .6em);
 }
-
 #typethis {
 font-family: var(--font-compliment);
 text-decoration: none; 
@@ -78,13 +108,3 @@ margin-left: 10%;
 border-bottom: solid 1px grey;
 
 }
-li { 
-  margin: 20px; 
-  
-}
-li::marker{
-  
-  color: var(--green-bright);
-  transition-property: color;
-  transition-duration: var(--mode-speed) ;
-  }

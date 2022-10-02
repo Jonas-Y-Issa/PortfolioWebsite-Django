@@ -6,6 +6,7 @@
 	transition-timing-function: linear;
 
 }
+
 .light-mode ::selection{
   color: white;
   background-color: black;
@@ -13,13 +14,11 @@
 /* Intro */
 .light-mode .intro>span:nth-child(2){
   color:var(--red-dark);
-  text-shadow: 5px 5px 5px rgb(0, 0, 0);
 
   }
 
 .light-mode .intro>span:nth-child(3){
     color:var(--red-dark);
-    text-shadow: 5px 5px 5px rgb(0, 0, 0);
   }
 .light-mode .overlay{
   background-color: var(--light-grey);
@@ -39,14 +38,30 @@
 .light-mode #typethis{
   color:var(--red-bright);
 }
-.light-mode li::marker{
-  color:var(--red-bright);
-  }
+.light-mode li>a::before{
+  color: var(--red-bright);
+  content: counter(item) "[" ;
+  box-sizing: inherit;
+}
+.light-mode li>a::after{
+  color: var(--red-bright);
+  content: "]" ;
+  box-sizing: inherit;
+}
 .light-mode .nav_text>li>a:hover {
   color: var(--light-grey);
   text-decoration: underline; 
 }
-  
+.light-mode .nav_text>li>a:hover::before
+{
+  color: var(--light-grey);
+  text-decoration: underline; 
+}
+.light-mode .nav_text>li>a:hover::after
+{
+  color: var(--light-grey);
+  text-decoration: underline; 
+}  
 .light-mode .nav_text>li>a {
   color: var(--light-black);
   text-decoration: none; 

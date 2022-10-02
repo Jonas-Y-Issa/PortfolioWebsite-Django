@@ -16,13 +16,11 @@
   color:var(--green-dark);
   transition-property: color;
   transition-duration: var(--mode-speed) ;
-  text-shadow: 1px 1px 1px rgb(255, 255, 255);
 }
 .intro>span:nth-child(3){
   color:var(--green-dark);
   transition-property: color;
   transition-duration: var(--mode-speed) ;
-  text-shadow: 1px 1px 1px rgb(255, 255, 255);
 }
 .overlay{
   background-color: var(--dark-grey);
