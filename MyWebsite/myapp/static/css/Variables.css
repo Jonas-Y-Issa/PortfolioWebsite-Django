@@ -8,7 +8,11 @@
     src:url('../fonts/GochiHand-Regular.ttf');
   
   }
-
+  @font-face{
+    font-family: GemunuLibret;
+    src:url('../fonts/GemunuLibret.ttf');
+  
+  }
 :root {
     --dark-grey: #232323; 
     --dark-white: #ffffff; 
@@ -23,6 +27,7 @@
     --font-main: "Courier New";
     --font-compliment: Montserrat;
     --font-hand: GochiHand;
+    --font-markers: GemunuLibret;
     --fs-ansi: 6px;
     --fs1: 12px;
     --fs2: 13px;
