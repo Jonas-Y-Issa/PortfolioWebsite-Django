@@ -15,8 +15,10 @@
   }
 :root {
     --dark-grey: #232323; 
+    --dark-grey-section: #1f1f1f;
     --dark-white: #ffffff; 
     --light-grey: #e0e0e0;
+    --light-grey-section: #cccccc;
     --light-black:#000000;
     --green-bright: #00ff9a;
     --green-dark: #04AA6D;
@@ -32,9 +34,10 @@
     --fs1: 12px;
     --fs2: 13px;
     --fs3: 15px;
-    --fs4: 15px;
     --fs5: 70px;
     --fs-header: 50px;
+    --fs-sub-header: 70px;
     --mode-speed: 1s;
     --mode-speed-background: 2s;
+    --left-pad: 100px;
 }
