@@ -1,0 +1,26 @@
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #797979 #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 12px;
+    width: 12px;
+
+  }
+  *::-webkit-scrollbar-track {
+    background-color: var(--dark-grey-section);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--green-dark);
+    transition: background-color var(--mode-speed) linear;
+
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--green-bright);
+
+  }
+  
+  

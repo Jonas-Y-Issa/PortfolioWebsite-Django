@@ -1,0 +1,17 @@
+
+.section-format{
+    padding-top: 40px;
+    padding-left: var(--left-pad);
+    font-size: var(--fs-sub-header);
+    color: var(--green-dark);
+    background-color: var(--dark-grey-section);
+    width: auto;
+    font-family: var(--font-compliment);
+    font-weight: 600;
+}
+.section-format::before{
+    content:"{";
+}
+.section-format::after{
+    content:"}";
+}
