@@ -1,20 +1,21 @@
 /* Body */
-.light-mode{
-  --dark-grey: var(--light-grey);
-  --dark-white: var(--light-black);
-  --green-bright: var(--red-bright);
-  --green-dark: var(--red-dark);
-  --dark-grey-section: var(--light-grey-section);
+.dark-mode{
+  --light-grey: var(--dark-grey);
+  --light-white: var(--dark-white);
+  --red-bright: var(--green-bright);
+  --red-dark: var(--green-dark);
+  --light-grey-section: var(--dark-grey-section);
+  
 }
 
-.light-mode ::selection{
-  color: white;
-  background-color: black;
+.dark-mode ::selection{
+  color: black;
+  background-color: white;
 }
 
 /* Button */
-.light-mode .svg{
-  fill: var(--light-black);
+.dark-mode .svg{
+  fill: var(--dark-white);
   width:80%
 }
 pre> svg:hover>.svg{

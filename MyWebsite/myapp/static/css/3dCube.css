@@ -6,7 +6,7 @@
 	bottom:auto;
 }
 .face{
-    background-color: var(--dark-grey); 
+    background-color: var(--light-grey); 
 	position: absolute;
 	top: 0;
 	left: 0;
