@@ -1,8 +1,7 @@
-* {
+:root{
     scrollbar-width: thin;
-    scrollbar-color: var(--red-bright) var(--light-grey-section);
+    scrollbar-color: var(--imprint-text) var(--light-grey-section);
   }
-  
   *::-webkit-scrollbar {
     width: 12px;
     width: 12px;

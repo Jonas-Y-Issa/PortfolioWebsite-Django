@@ -88,8 +88,9 @@ h1{
   position:static;
 }
 
-div:has(> a#typethis)
+#typethis-wrapper
 {
+  font-family: var(--font-compliment);
   color:var(--imprint-text);
   padding-left:40px;
 
@@ -101,7 +102,7 @@ ol {
   padding-inline-start: 0px;
   position: relative;
 }
-ol:has(li)::after {
+.nav_text::after {
 content: ' ';
 text-decoration: none;
 position: absolute;
