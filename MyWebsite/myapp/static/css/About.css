@@ -3,11 +3,18 @@
     padding-top: 40px;
     padding-left: var(--left-pad);
     font-size: var(--fs-sub-header);
-    color: var(--green-dark);
-    background-color: var(--dark-grey-section);
+    color: var(--red-dark);
+    background-color: var(--light-grey-section);
     width: auto;
     font-family: var(--font-compliment);
     font-weight: 600;
+    text-shadow: 2px 2px #000000;
+
+}
+.dark-mode .section-format{
+
+    text-shadow: 2px 2px #ffffff;
+
 }
 .section-format::before{
     content:"{";

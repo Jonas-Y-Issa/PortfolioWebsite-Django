@@ -19,7 +19,7 @@ border-top: solid 1px var(--imprint-text);
 .push_right>pre>span { 
   font-weight: bold; 
   font-size: var(--fs2);
-  color: var(--green-bright); 
+  color: var(--red-bright); 
   transition-property: color;
   transition-duration: var(--mode-speed) ;
 }
@@ -46,7 +46,7 @@ border-top: solid 1px var(--imprint-text);
 
 }
 .ansi1>span{
-  color: var(--green-bright);
+  color: var(--red-bright);
   transition-property: color;
   transition-duration: var(--mode-speed);
 }

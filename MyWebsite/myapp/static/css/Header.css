@@ -27,14 +27,14 @@ li {
 }
 
 li>a::before{
-  color: var(--green-bright);
+  color: var(--red-bright);
   content: "0" counter(item) "[" ;
   box-sizing: inherit;
   transition: color var(--mode-speed) linear;
 }
 li>a::after{
 
-  color: var(--green-bright);
+  color: var(--red-bright);
   content: "]" ;
   box-sizing: inherit;
   transition: color var(--mode-speed) linear;
@@ -43,11 +43,11 @@ li>a::after{
 
 .nav_text>li>a:hover::before
 {
-  color: var(--dark-grey);
+  color: var(--light-grey);
   text-decoration: underline; 
 }.nav_text>li>a:hover::after
 {
-  color: var(--dark-grey);
+  color: var(--light-grey);
   text-decoration: underline; 
 }
 .nav_text>li>a{
@@ -58,14 +58,14 @@ li>a::after{
   border-radius: 2px;
   opacity: .8;
   background:
-    conic-gradient(from -135deg at 100%  50%, var(--green-bright) 90deg, rgba(0, 0, 0, 0) 0) 
+    conic-gradient(from -135deg at 100%  50%, var(--red-bright) 90deg, rgba(0, 0, 0, 0) 0) 
       0  var(--p, 0%) / var(--s, 0%) 200% no-repeat,
-    conic-gradient(from -135deg at 1.1em 50%, rgba(0, 0, 0, 0) 90deg, var(--green-bright) 0) 
+    conic-gradient(from -135deg at 1.1em 50%, rgba(0, 0, 0, 0) 90deg, var(--red-bright) 0) 
       100% var(--p, 0%) / var(--s, 0%) 200% no-repeat;
   transition: background-position 0s, background-size .2s;
 }
 .nav_text>li>a:hover {
-  color: var(--dark-grey);
+  color: var(--light-grey);
   text-decoration: underline; 
   font-family: var(--font-main);
 
@@ -75,7 +75,7 @@ li>a::after{
 #typethis {
 font-family: var(--font-compliment);
 text-decoration: none; 
-color: var(--green-bright);
+color: var(--red-bright);
 transition: color var(--mode-speed) linear;
 
 }
@@ -84,7 +84,7 @@ h1{
   font-size: var(--fs1);
 }
 .svg{
-  fill: var(--dark-white);
+  fill: var(--light-white);
   position:static;
 }
 
@@ -117,8 +117,8 @@ border-bottom: solid 1px grey;
   margin-left: 10%;
   height: auto;
 }
-a:has(#svg-links){
-  fill: var(--dark-white);
+#svg-link-wrapper{
+  fill: var(--light-white);
   padding-inline-start: 0px;
   padding-right: 10px;
   height: 30px;
@@ -133,7 +133,7 @@ a:has(#svg-links){
 
 }
 #svg-links:hover{
-  fill: var(--green-bright);
+  fill: var(--red-bright);
   transform: translateY(-5px);
   padding-bottom: 5px;
   transition: fill 0.2s linear;
