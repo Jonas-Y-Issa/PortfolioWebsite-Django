@@ -2,4 +2,4 @@
 
 Stack: MariaDB/Javascript/Django/Gunicorn/Nginx
 
-![image](https://user-images.githubusercontent.com/110714003/193881596-6a32d9a1-a66b-45d2-b073-346b76ddc6aa.png)
+![image](https://user-images.githubusercontent.com/110714003/193881843-cdb16ec5-c8ba-4537-9506-937eb45817db.png)
