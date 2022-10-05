@@ -10,6 +10,8 @@ header {
   opacity: 90%;  
   z-index: 1000;
   transition: transform 0.2s ease-in-out;
+  white-space: nowrap;  
+
 }
 
 .nav-up {
@@ -28,7 +30,7 @@ li {
 
 li>a::before{
   color: var(--red-bright);
-  content: "0" counter(item) "[" ;
+  content: counter(item) "[" ;
   box-sizing: inherit;
   transition: color var(--mode-speed) linear;
 }
