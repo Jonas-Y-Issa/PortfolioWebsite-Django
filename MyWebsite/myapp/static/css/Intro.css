@@ -27,3 +27,35 @@
   z-index: -2;
   width: 100%;
 }
+/* SVG Links */
+#svg-container{
+  margin-left: 10%;
+  margin: 0px;
+  height: auto;
+}
+#svg-link-wrapper{
+  fill: var(--light-white);
+  padding-inline-start: 0px;
+  padding-right: 10px;
+  height: 30px;
+  width: 30px;
+
+}
+#svg-links{
+  height: var(--svg-height);
+  transition: fill var(--mode-speed-background) linear;
+  align-items: center;
+}
+#svg-links:hover{
+  fill: var(--red-bright);
+  transform: translateY(-5px);
+  padding-bottom: 5px;
+  transition: fill 0.2s linear;
+}
+.stat{
+  font-family: var(--font-compliment);
+  position: fixed;
+	bottom: 0;
+  right: 0;
+  vertical-align: middle;
+}
