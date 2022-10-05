@@ -113,30 +113,3 @@ border-bottom: solid 1px grey;
 
 }
 
-/* SVG Links */
-#svg-container{
-  margin-left: 10%;
-  height: auto;
-}
-#svg-link-wrapper{
-  fill: var(--light-white);
-  padding-inline-start: 0px;
-  padding-right: 10px;
-  height: 30px;
-  width: 30px;
-  align-items: center;
-}
-#svg-links{
-  --svg-height: 30px;
-  height: var(--svg-height);
-  transition: fill var(--mode-speed-background) linear;
-  align-items: center;
-
-}
-#svg-links:hover{
-  fill: var(--red-bright);
-  transform: translateY(-5px);
-  padding-bottom: 5px;
-  transition: fill 0.2s linear;
-
-}
