@@ -25,7 +25,7 @@
     display: block;
     float: right;
     max-width: var(--img-size);
-    padding-right: 5%;
+    padding: 5%;
 
     color: var(--imprint-text);
     font-family: var(--font-compliment);
@@ -45,10 +45,9 @@
 }  
 .section-content
 {
-    margin-left: 10%;
-    font-size: var(--fs4);
+    font-size: 25px;
     font-family: var(--font-main);
-    overflow-wrap: break-word;
+    margin-left: 10%;
     margin-right: 5%;
-    white-space: pre-wrap;  
+    white-space: pre-wrap;
 }
