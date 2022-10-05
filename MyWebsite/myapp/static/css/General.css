@@ -1,5 +1,6 @@
 section{
-  font-family: var(--font-main);
+  min-height: 100vh;
+  
 }
 body { 
   background-color: var(--light-grey); 
@@ -13,10 +14,6 @@ body {
 ::selection{
   color: white;
   background-color: black;
-}
-section{
-  min-height: 100vh;
-
 }
 html {
 	scroll-behavior: smooth;
