@@ -12,6 +12,11 @@
     font-family: GemunuLibret;
     src:url('../fonts/GemunuLibret.ttf');
   
+  }  
+  @font-face{
+    font-family: Liberation Mono;
+    src:url('../fonts/Liberation-Mono.ttf');
+  
   }
 :root {
     --dark-grey: #232323; 
@@ -26,7 +31,7 @@
     --red-dark: #b13f3b;
     --imprint-text: #444444;
     --nav-height: 80px;
-    --font-main: "Courier New";
+    --font-main: Liberation Mono;
     --font-compliment: Montserrat;
     --font-hand: GochiHand;
     --font-markers: GemunuLibret;
