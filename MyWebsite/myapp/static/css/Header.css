@@ -15,7 +15,10 @@ header {
 }
 
 .nav-up {
-  transform: translateY(-100%);
+  transform: translateY(-90%);
+}
+.nav-up:hover {
+  transform: translateY(00%);
 }
 .navigate_style {
   display: flex;
