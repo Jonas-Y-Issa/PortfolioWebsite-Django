@@ -1,7 +1,5 @@
 .section-format{
     padding-top: 30px;
-    padding-left: var(--left-pad);
-    padding-right: var(--left-pad);
     background-color: var(--light-grey-section);
 }
 .section-header{
@@ -10,6 +8,8 @@
     white-space: nowrap;  
     color: var(--red-dark);
     font-weight: 600;
+    padding-left: var(--left-pad);
+    padding-right: var(--left-pad);
     text-shadow: 2px 2px #000000;
     margin: 0px;
     height: auto;
@@ -23,6 +23,8 @@
 .content-wrapper
 {
     display: flex;
+    padding-left: var(--left-pad);
+    padding-right: var(--left-pad);
     justify-content: center;
     align-items: center;
     min-height:inherit;
