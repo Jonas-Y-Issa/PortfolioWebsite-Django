@@ -1,7 +1,7 @@
 .project-nav
 {
 
-    width: auto;
+    width: 100vh;
 
 }
 .project-nav a{
@@ -68,7 +68,12 @@
 
 }
 @media (max-width: 999px) {
-
+    .project-nav
+    {
+    
+        display: none;
+    
+    }
     .project-wrapper{
         width: 80%;
         height: 100%;
