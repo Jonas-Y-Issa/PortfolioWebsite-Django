@@ -1,0 +1,57 @@
+.project-nav a{
+    background-color: rgba(0, 0, 0, 0.137);
+    font-size: 20px;
+    font-family: var(--font-main);
+    white-space: nowrap;
+    padding: 5%;
+    display: block;
+    border-left: outset 5px var(--red-dark);
+}
+.project-nav a{
+    margin-bottom: 2px;
+    top: 0;
+    padding-right: 10px;
+}
+
+.project-nav>ul>a::after{
+    content: ":";
+}
+
+
+.project-wrapper{
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.project-content
+{
+    background-color: rgba(0, 0, 0, 0.11);
+    font-size: 15px;
+    font-family: var(--font-main);
+    width: 50%;
+    white-space: pre-wrap;
+    min-width: 500px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+.project-content>a
+{
+    color: var(--red-dark);
+}
+.project-content-img
+{
+    background-color: rgba(0, 0, 0, 0.11);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: 45%;
+    min-width: 500px;
+    max-width: 50%;
+    font-size:0 ;
+    float: right;
+}
+.project-content-img>img{
+    max-width: 100%;   
+}
+
