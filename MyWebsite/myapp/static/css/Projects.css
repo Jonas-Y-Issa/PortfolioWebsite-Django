@@ -19,20 +19,21 @@
 
 
 .project-wrapper{
-    width: 100%;
+    width: 90%;
+    height: 100%;
     display: inline-flex;
-    flex-wrap: wrap;
 }
 .project-content
 {
-    background-color: rgba(0, 0, 0, 0.11);
+    background-color: rgba(0, 0, 0, 0.103);
+
     font-size: 15px;
     font-family: var(--font-main);
-    width: 50%;
+    width: 70%;
     white-space: pre-wrap;
+    max-height: 500px;
     min-width: 500px;
     border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
 
 }
 .project-content>a
@@ -41,17 +42,18 @@
 }
 .project-content-img
 {
-    background-color: rgba(0, 0, 0, 0.11);
-    display: flex;
     justify-content: center;
-    align-items: center;  
-    width: 45%;
-    min-width: 500px;
-    max-width: 50%;
-    font-size:0 ;
-    float: right;
+    vertical-align: middle;
+    width: 20%;
+    min-width: 300px;
+    max-height: 500px;
+    overflow: hidden;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
 }
+
 .project-content-img>img{
-    max-width: 100%;   
+    max-height: 100%;
 }
 
