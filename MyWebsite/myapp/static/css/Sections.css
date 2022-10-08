@@ -6,6 +6,22 @@ section{
     padding-top: 30px;
     background-color: var(--light-grey-section);
 }
+@media (max-width: 999px) {
+    .section-header{
+        font-size: var(--fs-sub-header);
+        font-family: var(--font-compliment);
+        white-space: nowrap;  
+        color: var(--red-dark);
+        font-weight: 600;
+        text-shadow: 2px 2px #000000;
+        margin: 0px;
+        height: auto;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+
+}
 .section-header{
     font-size: var(--fs-sub-header);
     font-family: var(--font-compliment);
