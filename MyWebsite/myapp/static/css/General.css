@@ -1,7 +1,4 @@
-section{
-  min-height: 100vh;
-  
-}
+
 body { 
   background-color: var(--light-grey); 
   color: var(--light-white); 

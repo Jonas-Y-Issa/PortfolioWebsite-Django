@@ -16,11 +16,9 @@ header {
 
 .nav-up {
   transform: translateY(-90%);
-
 }
 .nav-up:hover {
   background-color: inherit;
-
   transform: translateY(00%);
 }
 .navigate_style {
@@ -104,20 +102,28 @@ h1{
 
 }
 /*Nav Layout and Underscore*/
-ol { 
-  display: flex;
-  font-size: var(--fs3);  
-  padding-inline-start: 0px;
-  position: relative;
-}
-.nav_text::after {
-content: ' ';
-text-decoration: none;
-position: absolute;
-width: 80%;
-bottom: 0;
-margin-left: 10%;
-border-bottom: solid 1px grey;
+@media (max-width: 999px) {
+  ol { 
+    display: none;
+  }
 
 }
+@media (min-width: 1000px) {
+  
+  ol { 
+    display: flex;
+    font-size: var(--fs3);  
+    padding-inline-start: 0px;
+    position: relative;
+  }
+  .nav_text::after {
+    content: ' ';
+    text-decoration: none;
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    margin-left: 10%;
+    border-bottom: solid 1px grey;
+  }
 
+  }
