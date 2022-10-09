@@ -1,13 +1,17 @@
-.rectwrapper{
-	width: 350px;
-	height: 70px;
-	transform-style: preserve-3d;
-	display: inline-block;
-	bottom:auto;
-}
+
+	.rectwrapper{
+		width: 350px;
+		height: var(--fs5);
+		transform-style: preserve-3d;
+		display: inline-block;
+		bottom:auto;
+	}
+
+
 .face{
     background-color: var(--light-grey); 
 	position: absolute;
+	width: 100vh;
 	top: 0;
 	left: 0;
 	right: 0;

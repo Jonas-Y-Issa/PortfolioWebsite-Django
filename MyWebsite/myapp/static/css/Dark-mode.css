@@ -24,10 +24,13 @@ pre> svg:hover>.svg{
 .lightbuttontext{
   z-index: 2; 
   position:relative; 
-  top:60px; 
   right:20px; 
   float: right; 
-  font-size: var(--fs4); 
   font-family: var(--font-hand); 
   transform: rotateZ(25deg);
 }
+
+  .lightbuttontext{
+  font-size: var(--fs4); 
+  top: 80px; 
+  }
