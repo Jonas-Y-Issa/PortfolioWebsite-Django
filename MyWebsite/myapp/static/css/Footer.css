@@ -4,13 +4,14 @@ footer {
   color: var(--imprint-text);
   position: static;
   bottom: 0;
-  width: 100%;
+  min-width: 100vh;
   background-color: inherit;
 }
 footer:after {
 content: ' ';
 text-decoration: none;
 position: absolute;
+min-width: 80vh;
 width: 80%;
 margin-left: 10%;
 border-top: solid 1px var(--imprint-text);
@@ -51,4 +52,11 @@ border-top: solid 1px var(--imprint-text);
   color: var(--red-bright);
   transition-property: color;
   transition-duration: var(--mode-speed);
+}
+@media (max-width: 999px){
+.ansi1{
+
+  display: none;
+}
+
 }

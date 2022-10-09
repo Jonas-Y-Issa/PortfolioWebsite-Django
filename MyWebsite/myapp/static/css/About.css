@@ -1,27 +1,29 @@
 
-.about-content
-{
-    background-color: rgba(0, 0, 0, 0.11);
-    font-size: 20px;
-    font-family: var(--font-main);
-    padding: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
-    white-space: pre-wrap;
-    min-height: var(--img-size);
-    border-radius: 10px;
-    border-left: outset 5px var(--red-bright);
-}
+@media (min-width: 1000px){
+    .about-content
+    {
+        background-color: rgba(0, 0, 0, 0.11);
+        font-size: 20px;
+        font-family: var(--font-main);
+        padding: 5%;
+        white-space: pre-wrap;
+        display: inline;
+        min-height: var(--img-size);
+        border-radius: 10px;
+        border-left: outset 5px var(--red-bright);
+        transition: border var(--mode-speed) ;
 
+        transition-timing-function: linear;
+    }
 
-
-.img-wrap {
-    float: right;
-    max-width: var(--img-size);
-    color: var(--imprint-text);
-    font-family: var(--font-compliment);
-    font-size: 17px;
-    padding-left: 5%;
+    .img-wrap {
+        float: right;
+        max-width: var(--img-size);
+        color: var(--imprint-text);
+        font-family: var(--font-compliment);
+        font-size: 17px;
+        padding-left: 5%;
+    }
 }
 .img-wrap:hover {
     color: var(--red-dark);
@@ -36,3 +38,29 @@
 .img-wrap>img:hover{
     filter: none;
 }  
+@media (max-width: 999px){
+
+    .about-content
+    {
+        background-color: rgba(0, 0, 0, 0.11);
+        font-size: 20px;
+        font-family: var(--font-main);
+        padding: 5%;
+        min-height: var(--img-size);
+        border-radius: 10px;
+        border-left: outset 5px var(--red-bright);
+        transition: border var(--mode-speed) ;
+        transition-timing-function: linear;
+
+    }
+    
+    .img-wrap {
+        margin: auto;
+        display: block;
+        max-width: var(--img-size);
+        color: var(--imprint-text);
+        font-family: var(--font-compliment);
+        font-size: 17px;
+    }
+
+}
