@@ -74,6 +74,11 @@
   z-index: 3;
 
 }
+
+.stat div a{
+  position: relative;
+  float: right;
+}
 a[href^="mailto:"]{
   color: inherit;
   text-decoration: none;
@@ -97,9 +102,5 @@ a[href^="mailto:"]:hover{
     z-index: 3;
     display: flex;
     flex-direction:column-reverse;
-  }
-  .stat div a{
-    position: relative;
-    float: right;
-  }
+  } 
 }

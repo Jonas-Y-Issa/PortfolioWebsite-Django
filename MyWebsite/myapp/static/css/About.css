@@ -12,7 +12,6 @@
         border-radius: 10px;
         border-left: outset 5px var(--red-bright);
         transition: border var(--mode-speed) ;
-
         transition-timing-function: linear;
     }
 
