@@ -6,24 +6,24 @@
   <title>Developer Jonas</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="../static/css/Intro.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/Footer.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/General.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/About.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/Projects.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/Header.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/Dark-mode.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/3dCube.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/Variables.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/Sections.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/scroll.css">
-  <link rel="icon" type="image/x-icon" href="../static/images/Logo.svg">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Intro.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Footer.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/General.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/About.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Projects.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Header.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Dark-mode.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/3dCube.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Variables.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Sections.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/scroll.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/Logo.svg' %}">
 
 </head>
-<script type="text/javascript" src="../static/scripts/3dCube.js" defer></script>
-<script type="text/javascript" src="../static/scripts/Typewriter.js" defer></script>
-<script type="text/javascript" src="../static/scripts/headerscroll.js" defer></script>
-<script type="text/javascript" src="../static/scripts/darkmode.js" defer></script>
+<script type="text/javascript" src="{% static 'scripts/3dCube.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'scripts/Typewriter.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'scripts/headerscroll.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'scripts/darkmode.js' %}" defer></script>
 
 <body>
   
@@ -90,7 +90,7 @@
 <section class="section-format" id="about">
 <div class="section-header-wrapper"><h1 class="section-header">About Me</h1></div>
 <div class="content-wrapper">
-  <div class="about-content"><div class="img-wrap"><img src="../static/images/profile.jpeg"></img>Felsensteg Birg · Lauterbrunnen, Switzerland (2022)</div>
+  <div class="about-content"><div class="img-wrap"><img src="{% static 'images/profile.jpeg'%}"></img>Felsensteg Birg · Lauterbrunnen, Switzerland (2022)</div>
   A bit about me.
 I'm a Python Developer from Western Sydney.
 
