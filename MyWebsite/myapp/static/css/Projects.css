@@ -33,7 +33,6 @@
     display:block;
     width: 70%;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 
 }
 @media (max-width: 999px) {
@@ -48,6 +47,7 @@
     margin: auto;
     width: auto;
     justify-content: center;
+    border-top-right-radius: 10px;
     align-items: center;
 }
 .project-content-img>img{
