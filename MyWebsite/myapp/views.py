@@ -19,5 +19,5 @@ from django.views.decorators.http import require_GET
 @require_GET
 @cache_control(max_age=60 * 60 * 24, immutable=True, public=True)  # one day
 def favicon(request: HttpRequest) -> HttpResponse:
-    file = (settings.BASE_DIR / "static" / "favicon.svg").open("rb")
+    file = (settings.BASE_DIR / "static/images" / "favicon.svg").open("rb")
     return FileResponse(file)
