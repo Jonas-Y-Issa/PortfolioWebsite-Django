@@ -2,7 +2,7 @@
 @media (min-width: 1000px){
     .about-content
     {
-        background-color: rgba(0, 0, 0, 0.11);
+        background-color: rgba(0, 0, 0, 0.048);
         font-size: 20px;
         font-family: var(--font-main);
         padding: 5%;
@@ -11,6 +11,7 @@
         min-height: var(--img-size);
         border-radius: 10px;
         border-left: outset 5px var(--red-bright);
+        border-bottom: outset 5px var(--red-bright);
         transition: border var(--mode-speed) ;
         transition-timing-function: linear;
     }
@@ -46,8 +47,10 @@
         font-family: var(--font-main);
         padding: 5%;
         min-height: var(--img-size);
-        border-radius: 10px;
+        border-radius: 15px;
+        border-bottom-right-radius: 15px;
         border-left: outset 5px var(--red-bright);
+        border-bottom: outset 5px var(--red-bright);
         transition: border var(--mode-speed) ;
         transition-timing-function: linear;
 
