@@ -24,7 +24,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-li { 
+header li { 
   margin: 10px; 
   counter-increment: item 1;
   list-style: none;
@@ -82,7 +82,7 @@ text-decoration: none;
 color: var(--red-bright);
 transition: color var(--mode-speed) linear;
 }
-h1{
+header h1{
   display: inline;
   font-size: var(--fs1);
 }

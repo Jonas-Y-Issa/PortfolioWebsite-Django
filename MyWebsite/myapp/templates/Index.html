@@ -1,9 +1,11 @@
-<!DOCTYPE html>{% load static %}
+<!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Developer Jonas</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   {% for scrpt in js_script %}<script type="text/javascript" src="{{stat}}scripts/{{scrpt}}" defer></script>
   {% endfor %}
   {% for style in styles %}<link rel="stylesheet" type="text/css" href="{{stat}}css/{{style}}">
@@ -71,7 +73,7 @@
 <div class="content-wrapper">
   <div class="about-content"><div class="img-wrap"><img src="{% static 'images/profile.jpeg'%}"></img>Felsensteg Birg · Lauterbrunnen, Switzerland (2022)</div>
 A bit about me.
-I'm a Python Developer from Western Sydney.
+I'm a Python Developer from Sydney.
 
 My hobbies vary widely whether its 3D modeling, Metal Machining, and designing & building Prosthetic hands.
 
@@ -126,28 +128,34 @@ I've made this open source if you would like to check out the code or use it as 
 <section class="section-format" id="skills">
   <div class="section-header-wrapper"><h1 class="section-header">Skills</h1></div>
   <div class="content-wrapper">
-
-  <div class="project-wrapper">
-    <div class="project-content">
-      <pre class="">
-        Languages:
-          Python
-          C#
-          Javascript
-        
-        Scripting:
-          Linux Bash
-          Windows Batch
-
-        Tools:
-          Arch Linux
-          Raspberry Pi
-          Git
-          Jupyter
-      </pre>
-    </div>
-    </div>
-  </div>
+    <div class="skills-wrapper">
+      <div class="skills-content">
+        <li class="skills-list">
+          <div>
+            <h1>Languages:</h1>
+              Python
+              C#
+              Javascript
+          </div>
+          <div>
+            <h1>Scripting:</h1>
+              Linux Bash
+              Windows Batch
+          </div>
+          <div>
+            <h1>Tools:</h1>
+              Arch Linux
+              Raspberry Pi
+              Git
+              Jupyter
+              NGINX
+              Django
+              GUnicorn
+          </div>
+        </li>
+        </div>
+      </div>
+      </div>
 </section>
 </main>
 </body>
