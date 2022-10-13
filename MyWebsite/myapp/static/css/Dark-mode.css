@@ -25,7 +25,8 @@
   z-index: 2; 
   position:relative; 
   right:20px; 
-  float: right; 
+    user-select: none;
+    float: right; 
   font-family: var(--font-hand); 
   transform: rotateZ(25deg);
 }
