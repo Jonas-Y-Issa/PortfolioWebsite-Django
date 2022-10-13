@@ -1,68 +1,54 @@
-
-@media (min-width: 1000px){
-    .about-content
-    {
-        background-color: rgba(0, 0, 0, 0.048);
-        font-size: 20px;
-        font-family: var(--font-main);
-        padding: 5%;
-        white-space: pre-wrap;
-        display: inline;
-        min-height: var(--img-size);
-        border-radius: 10px;
-        border-left: outset 5px var(--red-bright);
-        border-bottom: outset 5px var(--red-bright);
-        transition: border var(--mode-speed) ;
-        transition-timing-function: linear;
-    }
-
-    .img-wrap {
-        float: right;
-        max-width: var(--img-size);
-        color: var(--imprint-text);
-        font-family: var(--font-compliment);
-        font-size: 17px;
-        padding-left: 5%;
-    }
+.about-content
+ {
+     background-color: rgba(0, 0, 0, 0.048);
+     font-family: var(--font-main);
+     padding: 5%;
+     min-height: var(--img-size);
+     border-left: outset 5px var(--red-bright);
+     border-bottom: outset 5px var(--red-bright);
+     transition: border var(--mode-speed) ;
+     transition-timing-function: linear;
 }
-.img-wrap:hover {
+.img-wrap {
+    max-width: var(--img-size);
     color: var(--red-dark);
-
+    font-family: var(--font-compliment);
+    filter: grayscale(100%);
+    font-size: 15px;        
 }
+.img-wrap:hover{
+    filter: none;
+}  
 .img-wrap>img{
     max-width: var(--img-size);
     border-radius: 10px;
     border-right: outset 5px var(--red-bright);
-    filter: grayscale(100%);
 }
-.img-wrap>img:hover{
-    filter: none;
-}  
-@media (max-width: 999px){
 
+
+@media (min-width: 1000px){
     .about-content
     {
-        background-color: rgba(0, 0, 0, 0.11);
-        font-size: 20px;
-        font-family: var(--font-main);
-        padding: 5%;
-        min-height: var(--img-size);
-        border-radius: 15px;
-        border-bottom-right-radius: 15px;
-        border-left: outset 5px var(--red-bright);
-        border-bottom: outset 5px var(--red-bright);
-        transition: border var(--mode-speed) ;
-        transition-timing-function: linear;
-
+        font-size: 25px;
+        white-space: pre-wrap;
+        display: inline;
+        border-radius: 10px;
     }
-    
+    .img-wrap {
+        float: right;
+        padding-bottom: 3%;
+        padding-left: 5%;
+    }
+}
+
+@media (max-width: 999px){
+    .about-content
+    {
+        font-size: 20px;
+        border-radius: 15px;
+    }
     .img-wrap {
         margin: auto;
         display: block;
-        max-width: var(--img-size);
-        color: var(--imprint-text);
-        font-family: var(--font-compliment);
-        font-size: 17px;
     }
-
 }
