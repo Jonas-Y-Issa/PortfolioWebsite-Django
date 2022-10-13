@@ -10,6 +10,10 @@ function frame() {
 
     pos++;
     $("#rectw").css({'transform': `rotateX(${pos/2}deg)`});
+    if(pos/2 === 360)
+    {
+        pos = 0;
 
+    }
 }
 }
