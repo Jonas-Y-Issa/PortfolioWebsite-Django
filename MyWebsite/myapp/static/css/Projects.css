@@ -34,7 +34,7 @@
     display: flex;
     box-shadow: rgb(0, 0, 0) 0px 15px 15px -15px;
     margin: auto;
-    width: auto;
+    width: 100%;
     justify-content: center;
     border-top-right-radius: 10px;
     align-items: center;
@@ -60,7 +60,8 @@
 }
 @media (min-width: 1000px) {
     .project-wrapper{
-        width: 80%;
+        width: 50%;
+        max-width: 60%;
         max-height: 500px;        
         border-radius: 15px;
         border-bottom-right-radius: 35px;
@@ -73,8 +74,7 @@
         display: none;
     }
     .project-content{
-    box-shadow: rgb(0, 0, 0) 15px 0px 15px -15px;
-
+        box-shadow: rgb(0, 0, 0) 15px 0px 15px -15px;
     }
     .project-content-img
     {
@@ -88,8 +88,7 @@
         display: flex;
     }
 
-.project-content-img>img{
-      max-height: 100%;
+    .project-content-img>img{
+        max-height: 100%;
     }   
- 
 }
