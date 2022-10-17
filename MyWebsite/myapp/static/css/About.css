@@ -31,10 +31,9 @@
     {
         font-size: 25px;
         white-space: pre-wrap;
-        display: inline;
         border-radius: 10px;
-        max-width: 40%;
-        min-width: var(--img-size);
+        max-width: calc(var(--img-size)*2);
+        min-width: 40%;
     }
     .img-wrap {
         float: right;
