@@ -61,19 +61,11 @@ $(document).ready(function(){
 
 
 
-
-
 <section class="section-format" id="about">
 <div class="section-header-wrapper"><h1 class="section-header">About Me</h1></div>
-<div class="content-wrapper">
-  <div class="about-content"><div class="img-wrap"><img src="{% static 'images/profile.jpeg'%}"></img>Felsensteg Birg · Lauterbrunnen, Switzerland (2022)</div>
-Hi, I'm a Python Developer from Sydney.
-
-I am highly detail–focussed and enjoy performing a mixture of practical work.
-
-My core specialities in my professional career differentiate vastly from Softare, 3D Modeling, Metal machining and fabricating Prosthetic limbs.
-
+<div class="content-wrapper">{% for a in about %}<div class="about-content"><div class="img-wrap"><img src="{{stat}}/images/{{a.image}}"></img>{{a.image_desc}}</div>{{a.description}}
 </div>
+{% endfor %} 
 </div>
 </section>
 
