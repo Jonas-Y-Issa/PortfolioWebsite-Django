@@ -29,9 +29,15 @@
     float: right; 
   font-family: var(--font-hand); 
   transform: rotateZ(25deg);
-}
-
-  .lightbuttontext{
   font-size: var(--fs4); 
   top: 80px; 
+  }
+
+
+.lightbuttontext_header{
+  display: flex;
+  align-items: center;
+  }
+  .lightbuttontext_header:hover>.svg{
+    fill: rgb(255, 255, 132);
   }
