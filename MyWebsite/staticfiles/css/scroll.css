@@ -1,0 +1,25 @@
+:root{
+    scrollbar-width: thin;
+    scrollbar-color: var(--imprint-text) var(--light-grey-section);
+  }
+  *::-webkit-scrollbar {
+    width: 12px;
+    width: 12px;
+
+  }
+  *::-webkit-scrollbar-track {
+    background-color: var(--light-grey-section);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--red-dark);
+    transition: background-color var(--mode-speed) linear;
+
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--red-bright);
+
+  }
+  
+  

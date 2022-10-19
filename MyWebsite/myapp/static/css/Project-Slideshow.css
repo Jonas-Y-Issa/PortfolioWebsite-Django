@@ -50,14 +50,34 @@
 
 
 
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+ 
+  .fade-left {
+    animation-name: fade-left;
+    animation-duration: 1s;
+    transform:translateX(0%);
+
   }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
+  @keyframes fade-left {
+    from {
+      transform:translateX(-50%);
+
+    } 
+    to {
+      transform:translateX(0%);
+    }
   }
-  
+
+  .fade-right {
+    animation-name: fade-right;
+    animation-duration: 1s;
+    transform:translateX(0%);
+
+  }
+  @keyframes fade-right {
+    from {
+      transform:translateX(50%);
+    } 
+    to {
+      transform:translateX(0%);
+    }
+  }
