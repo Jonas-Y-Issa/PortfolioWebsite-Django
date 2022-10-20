@@ -75,6 +75,8 @@
     }
     .project-content{
         box-shadow: rgb(0, 0, 0) 15px 0px 15px -15px;
+    overflow: hidden;
+
     }
     .project-content-img
     {

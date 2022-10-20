@@ -1,0 +1,7 @@
+.apps
+{
+    font-family: var(--font-compliment);
+    text-decoration: none; 
+    color: var(--red-bright);
+    transition: color var(--mode-speed) linear;
+}
