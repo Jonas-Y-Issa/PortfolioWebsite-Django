@@ -76,10 +76,11 @@ $(document).ready(function(){
   <div class="section-header-wrapper"><h1 class="section-header">Projects</h1></div>
   <span class="background_django_style">        { % for proj in projects % }</span>
     <div class="content-wrapper" style="padding-bottom: 5px;">
+<div>
+      <a class="prev" onclick="plusSlides(-1)">❮ </a>
 
-      <a class="prev" onclick="plusSlides(-1)">❮</a>
-
-
+      <a class="next" onclick="plusSlides(1)">❯ </a>
+</div>
 {% for proj in projects %}
       <div class="project-wrapper fade-right">
         <div class="project-content"><div style="padding: 5%">{{proj.preface}}<a href="{{proj.extLink}}" target="_blank" rel="noopener noreferrer">{{proj.title}}</a>
@@ -93,7 +94,6 @@ $(document).ready(function(){
 </div>
 {% endfor %} 
 
-<a class="next" onclick="plusSlides(1)">❯</a>
 
 </div>
 <div style="text-align:center">

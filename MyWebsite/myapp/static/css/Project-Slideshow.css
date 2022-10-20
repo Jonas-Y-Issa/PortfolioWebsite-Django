@@ -24,6 +24,8 @@
     transition: 0.3s ease;
     border-radius: 3px 0px 0px 3px;
     user-select: none;
+    rotate: 90deg;
+    display: block;
 }
 .next {
     padding-left: 15px;
@@ -59,7 +61,7 @@
   }
   @keyframes fade-left {
     from {
-      transform:translateX(-50%);
+      transform:translateY(-50%);
 
     } 
     to {
@@ -75,7 +77,7 @@
   }
   @keyframes fade-right {
     from {
-      transform:translateX(50%);
+      transform:translateY(50%);
     } 
     to {
       transform:translateX(0%);
