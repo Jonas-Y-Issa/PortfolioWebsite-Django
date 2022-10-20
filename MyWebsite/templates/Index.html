@@ -3,11 +3,14 @@
 {% load static %}
 {% block head %}
 <script>
-$(document).ready(function(){
-    TypeThis('developerjonas.com')
-})
+  $(document).ready(function(){
+      TypeThis('developerjonas.com')
+  })
 </script>
-
+{% for scrpt in js_script %}<script type="text/javascript" src="{{stat}}homepage/scripts/{{scrpt}}" defer></script>
+{% endfor %}
+{% for style in styles %}<link rel="stylesheet" type="text/css" href="{{stat}}homepage/css/{{style}}">
+{% endfor %}
 {% endblock head %}
 {% block modeHeader %}
 {% endblock modeHeader %}
@@ -65,7 +68,7 @@ $(document).ready(function(){
 
 <section class="section-format" id="about">
 <div class="section-header-wrapper"><h1 class="section-header">About Me</h1></div>
-<div class="content-wrapper">{% for a in about %}<div class="about-content"><div class="img-wrap"><img src="{{stat}}/images/{{a.image}}"></img>{{a.image_desc}}</div>{{a.description}}
+<div class="content-wrapper">{% for a in about %}<div class="about-content"><div class="img-wrap"><img src="{{stat}}homepage/images/{{a.image}}"></img>{{a.image_desc}}</div>{{a.description}}
 </div>
 {% endfor %} 
 </div>
@@ -77,7 +80,7 @@ $(document).ready(function(){
   <div class="app-wrapper">
     <il>
       {% for app in apps %}
-      <div id="apps-type"><a class="apps" href="/physics">../{{app.title}}</a>]</div> {{app.description}}
+      <div id="apps-type"><a class="apps" href="/{{app.title}}">../{{app.title}}</a>]</div> {{app.description}}
       {% endfor %} 
     </il>
   </div>
@@ -104,7 +107,7 @@ $(document).ready(function(){
 
 </div>
 </div>
-<div class="project-content-img"><img src="{{stat}}/images/{{proj.image}}"></img>
+<div class="project-content-img"><img src="{{stat}}homepage/images/{{proj.image}}"></img>
 </div>      
 </div>
 {% endfor %} 
