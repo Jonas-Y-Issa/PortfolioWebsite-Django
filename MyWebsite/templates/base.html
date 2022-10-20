@@ -8,9 +8,9 @@
   <title>Developer Jonas</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  {% for scrpt in js_script %}<script type="text/javascript" src="{{stat}}scripts/{{scrpt}}" defer></script>
+  {% for scrpt in base.js_script %}<script type="text/javascript" src="{{stat}}base/scripts/{{scrpt}}" defer></script>
   {% endfor %}
-  {% for style in styles %}<link rel="stylesheet" type="text/css" href="{{stat}}css/{{style}}">
+  {% for style in base.styles %}<link rel="stylesheet" type="text/css" href="{{stat}}base/css/{{style}}">
   {% endfor %}
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKNTW4LT72"></script>

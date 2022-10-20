@@ -12,7 +12,10 @@ $(document).ready(function(){
 </script>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
+{% for scrpt in js_script %}<script type="text/javascript" src="{{stat}}physics/scripts/{{scrpt}}" defer></script>
+{% endfor %}
+{% for style in styles %}<link rel="stylesheet" type="text/css" href="{{stat}}physics/css/{{style}}">
+{% endfor %}
 <script>
   MathJax = {
     tex: {
@@ -32,18 +35,12 @@ $(document).ready(function(){
 
     {% block nav %}
           <li><a href="https://developerjonas.com" rel="noopener noreferrer">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
         </ol>
         <div class="dropdown">
           <button class="dropbtn">>. . . 
           </button>
           <div class="dropdown-content">
             <li><a href="#intro">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
           </div>
         </div> 
     {% endblock nav %}

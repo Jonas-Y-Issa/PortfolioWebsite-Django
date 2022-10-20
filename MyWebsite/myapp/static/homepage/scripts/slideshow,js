@@ -1,7 +1,7 @@
 
   let slideIndex = 1;
-  let slides = document.getElementsByClassName("project-wrapper");
-  let dots = document.getElementsByClassName("dot");
+  let slides = document.querySelectorAll(".project-wrapper");
+  let dots = document.querySelectorAll(".dot");
 
   showSlides(slideIndex);
   

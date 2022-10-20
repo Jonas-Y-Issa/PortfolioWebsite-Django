@@ -21,11 +21,7 @@
 }
 .app-wrapper{
     padding:50px;
-
-
     display: flex;
     align-items: center;
     margin: auto;
-
-
 }
