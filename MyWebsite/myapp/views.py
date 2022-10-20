@@ -7,7 +7,7 @@ from django.views.decorators.cache import cache_control
 from django.views.decorators.http import require_GET
 from MyWebsite.settings import STATIC_URL 
 from pathlib import Path
-from myapp.models import Project, Skills, About
+from myapp.models import Project, Skills, About, Apps
 
 STAT_DIR = Path(__file__).resolve().parent.parent
 
@@ -17,6 +17,7 @@ def index(request):
     scripts_list = os.listdir(path / "scripts")   
     images_list = os.listdir(path / "images")   
     fonts_list = os.listdir(path / "fonts")
+    app_list = Apps.objects.all()
     project_db = Project.objects.all()
     skill_list = Skills.objects.all()
     about_list = About.objects.all()
@@ -26,6 +27,7 @@ def index(request):
        'images': images_list,
         'fonts': fonts_list,
          'stat': STATIC_URL,
+         'apps':app_list,
          'projects':project_db,
          'skills': skill_list,
          'about':about_list})

@@ -18,3 +18,4 @@ def physics(request):
        'images': images_list,
         'fonts': fonts_list,
          'stat': STATIC_URL})
+

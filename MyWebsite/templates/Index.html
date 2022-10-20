@@ -42,6 +42,7 @@ $(document).ready(function(){
     {% block nav %}
           <li><a href="#intro">Home</a></li>
           <li><a href="#about">About Me</a></li>
+          <li><a href="#apps">Apps</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
         </ol>
@@ -51,6 +52,7 @@ $(document).ready(function(){
           <div class="dropdown-content">
             <li><a href="#intro">Home</a></li>
             <li><a href="#about">About Me</a></li>
+            <li><a href="#apps">Apps</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
           </div>
@@ -69,6 +71,19 @@ $(document).ready(function(){
 </div>
 </section>
 
+<section class="section-format" id="apps">
+  <div class="section-header-wrapper"><h1 class="section-header">Apps</h1></div>
+  <span class="background_django_style">        { % for app in apps % }</span>
+  <div class="app-wrapper">
+    <il>
+      {% for app in apps %}
+      <div id="apps-type"><a class="apps" href="/physics">../{{app.title}}</a>]</div> {{app.description}}
+      {% endfor %} 
+    </il>
+  </div>
+<span class="background_django_style">        { % endfor % } </span>
+
+</section>
 
 
 
