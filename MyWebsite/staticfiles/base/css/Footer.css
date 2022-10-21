@@ -4,14 +4,13 @@ footer {
   color: var(--imprint-text);
   position: static;
   bottom: 0;
-  min-width: 100vh;
   background-color: inherit;
 }
 footer:after {
 content: ' ';
 text-decoration: none;
 position: absolute;
-min-width: 80vh;
+min-width: 80vw;
 width: 80%;
 margin-left: 10%;
 border-top: solid 1px var(--imprint-text);
