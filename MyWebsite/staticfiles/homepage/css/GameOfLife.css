@@ -1,0 +1,10 @@
+canvas { 
+    height: 100%; 
+    width: 100%; 
+    z-index: -1;
+    position: absolute;
+    background: var(--light-grey);
+    transition: background var(--mode-speed-background);
+    transition-timing-function: linear;
+    
+  }
