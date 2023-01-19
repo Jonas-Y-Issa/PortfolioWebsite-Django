@@ -8,7 +8,7 @@ Django/Gunicorn/Nginx/MariaDB/Javascript
 
 Currently Running @ https://developerjonas.com
 
-![image](https://user-images.githubusercontent.com/110714003/193881843-cdb16ec5-c8ba-4537-9506-937eb45817db.png)
+![ksnip_20230119-150824](https://user-images.githubusercontent.com/110714003/213353015-9f0cab28-845e-4e02-9ce1-3397e5c52c7b.png)
 
 ## So, How do you get started?
 
