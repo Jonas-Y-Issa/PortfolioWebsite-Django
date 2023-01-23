@@ -1,0 +1,25 @@
+{% block head %}
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+{% for scrpt in js_script %}<script type="text/javascript" src="{{stat}}root/scripts/{{scrpt}}" defer></script>
+{% endfor %}
+{% for style in styles %}<link rel="stylesheet" type="text/css" href="{{stat}}root/css/{{style}}">
+{% endfor %}
+
+{% endblock head %}
+
+<div id='menuChoiceContainer'>
+  <div id='menuChoiceHeader'>
+    <h1>This Page is Under Construction</h1>
+  </div>
+  <a href="/asp" class="option" id="ASP">
+    <span id="link-spanner1">ASP.NET</span>
+  </a>
+  <a href="/django" class="option" id="Django">
+    <img src="{{stat}}root/images/django-svgrepo-com.svg"></img>
+  </a>
+  <div id='menuChoiceFooterWrapper'>
+    <div id='menuChoiceFooter'>
+    </div>
+  </div>
+</div>
