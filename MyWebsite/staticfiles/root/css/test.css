@@ -4,14 +4,25 @@ html, body {
   width: 100%;
   height: 100%;
 } 
+footer{
+  position: absolute;
+  display: flexbox;
+  bottom: 0px;
+  align-content: center;
+  align-items: center;display: flex;
+  justify-content: center;
+  width: 100%;
+}
 #menuChoiceHeader {
   z-index: 100;
   position: absolute;
+  display: flexbox;
   top: 0px;
   left: 0px;
   right: 0px;
   height: 50px;
 }
+
 .option {
   display: block;
   position: absolute;
@@ -29,14 +40,21 @@ html, body {
 #ASP {
   left: 0;
   right: 50%;
-
   font: normal 5.10em/150px 'Capital TT', Arial, Helvetica, sans-serif;
   vertical-align: middle;
   text-align: center;
   background-repeat: no-repeat;
   background-position: right center;
+  background-color: rgb(70, 70, 70);
 }
-
+#ASP img{
+  filter: sepia(79%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+#ASP:hover {
+  background-color: rgb(51, 51, 51);
+  transition: background-color .4s;
+  text-decoration: underline; 
+}
 #Django {
   left: 50%;
   right: 0;
@@ -46,17 +64,19 @@ html, body {
   color: inherit;
   text-decoration: none; 
   border-radius: 2px;
-  opacity: .8;
-  background:
-    conic-gradient(from -135deg at 100%  100%, rgb(255, 0, 0) 90deg, rgba(255, 0, 0, 0) 0) 
-      0  var(--p, 0%) / var(--s, 0%) 500% no-repeat;
-  transition: background-position 0s, background-size .2s;
+  background-color: rgb(68, 183, 139);
+}
+a img{
+  width: 75%;
+}
+#Django img{
+  filter: sepia(79%) hue-rotate(86deg) brightness(118%) contrast(119%);
 }
 #Django:hover {
-  color: rgb(255, 0, 0);
-
+  background-color: rgb(51, 51, 51);
+  transition: background-color .4s;
   text-decoration: underline; 
-  --p: 100%;
-  --s: calc(50% + .6em);
 }
-
+#Django:hover img{
+  filter: none;
+}
