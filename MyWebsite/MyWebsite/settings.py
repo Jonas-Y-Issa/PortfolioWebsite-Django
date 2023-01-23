@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'myapp.apps.MyappConfig',
-    'physGenViewer.apps.PhysgenviewerConfig',
+    'rootPage.apps.RootpageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,6 +126,7 @@ STATIC_URL = '/static/'
 # django_project/settings.py
 STATICFILES_DIRS = [BASE_DIR / 'myapp' / "static",
                     BASE_DIR / 'physGenViewer' / "static",
+                    BASE_DIR / 'rootPage' / "static",
                 ]  
 STATIC_ROOT = STATIC_ROOT = BASE_DIR / "staticfiles" 
 
