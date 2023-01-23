@@ -1,25 +1,34 @@
-{% block head %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-{% for scrpt in js_script %}<script type="text/javascript" src="{{stat}}root/scripts/{{scrpt}}" defer></script>
-{% endfor %}
 {% for style in styles %}<link rel="stylesheet" type="text/css" href="{{stat}}root/css/{{style}}">
 {% endfor %}
+</head>
 
-{% endblock head %}
+<body class="dark-mode">
 
 <div id='menuChoiceContainer'>
   <div id='menuChoiceHeader'>
     <h1>This Page is Under Construction - Please Select a Framework to Continue</h1>
   </div>
   <a href="/asp" class="option" id="ASP">
-    <span id="link-spanner1">ASP.NET</span>
+    <img src="{{stat}}root/images/asp-svgrepo-com.svg"></img>
   </a>
   <a href="/django" class="option" id="Django">
     <img src="{{stat}}root/images/django-svgrepo-com.svg"></img>
   </a>
-  <div id='menuChoiceFooterWrapper'>
-    <div id='menuChoiceFooter'>
-    </div>
+  
+  
+</div>
+<div id='menuChoiceFooterWrapper'>
+  <div id='menuChoiceFooter'>
+
+  <img src="{{stat}}root/images/gunicorn_logo_icon_170045.svg"></img>
+  <img src="{{stat}}root/images/gunicorn-svgrepo-com.svg"></img>
+
   </div>
 </div>
+</body>
