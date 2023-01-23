@@ -45,10 +45,11 @@ html, body {
   font: normal 5.10em/150px 'Capital TT', Arial, Helvetica, sans-serif;
   vertical-align: middle;
   text-align: center;
+  background-color: rgb(68, 183, 139);
+
   color: inherit;
   text-decoration: none; 
   border-radius: 2px;
-  opacity: .8;
   background:
     conic-gradient(from -135deg at 100%  50%, rgb(51, 51, 51) 90deg, rgba(0, 0, 0, 0) 0) 
       0  var(--p, 0%) / var(--s, 0%) 500% no-repeat,
@@ -57,9 +58,9 @@ html, body {
   transition: background-position 0s, background-size .2s;
 }
 #Django:hover {
-  color: rgb(0, 0, 0);
-
+  color: rgb(51, 51, 51);
+  
   text-decoration: underline; 
   --p: 100%;
-  --s: calc(50% + .6em);
+  --s: calc(100% + .6em);
 }

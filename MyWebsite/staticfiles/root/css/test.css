@@ -12,7 +12,6 @@ html, body {
   right: 0px;
   height: 50px;
 }
-
 .option {
   display: block;
   position: absolute;
@@ -36,7 +35,6 @@ html, body {
   text-align: center;
   background-repeat: no-repeat;
   background-position: right center;
-  background-color: #fff;
 }
 
 #Django {
@@ -50,16 +48,15 @@ html, body {
   border-radius: 2px;
   opacity: .8;
   background:
-    conic-gradient(from -135deg at 100%  50%, rgb(51, 51, 51) 90deg, rgba(0, 0, 0, 0) 0) 
-      0  var(--p, 0%) / var(--s, 0%) 500% no-repeat,
-    conic-gradient(from -135deg at 1.1em 50%, rgba(0, 0, 0, 0) 90deg, rgb(51, 51, 51) 0) 
-      100% var(--p, 0%) / var(--s, 0%) 500% no-repeat;
+    conic-gradient(from -135deg at 100%  100%, rgb(255, 0, 0) 90deg, rgba(255, 0, 0, 0) 0) 
+      0  var(--p, 0%) / var(--s, 0%) 500% no-repeat;
   transition: background-position 0s, background-size .2s;
 }
 #Django:hover {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 0, 0);
 
   text-decoration: underline; 
   --p: 100%;
   --s: calc(50% + .6em);
 }
+
