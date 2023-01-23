@@ -1,0 +1,57 @@
+
+  let slideIndex = 1;
+  let slides = document.querySelectorAll(".project-wrapper");
+  let dots = document.querySelectorAll(".dot");
+
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+
+    for (i = 0; i < slides.length; i++) {
+      if (n > 0){
+        slides[i].className = slides[i].className = 'project-wrapper fade-left'
+      }
+      else{
+
+        slides[i].className = slides[i].className = 'project-wrapper fade-right'
+        
+      }
+    }
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    for (i = 0; i < slides.length; i++) {
+      if (n > slideIndex){
+        slides[i].className = slides[i].className = 'project-wrapper fade-left'
+      }
+      else{
+
+        slides[i].className = slides[i].className = 'project-wrapper fade-right'
+        
+      }
+    }
+    showSlides(slideIndex = n);
+    
+  }
+  
+  function showSlides(n) {
+    let i;
+    if (n > slides.length) {
+      slideIndex = 1
+
+    }    
+    if (n < 1) {
+      slideIndex = slides.length
+
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "inline-flex";  
+    dots[slideIndex-1].className += " active";
+  }
