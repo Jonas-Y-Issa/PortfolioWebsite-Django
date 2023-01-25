@@ -1,0 +1,38 @@
+@font-face{
+    font-family: Montserrat;
+    src:url('../fonts/Montserrat.ttf');
+  
+  }
+  @font-face{
+    font-family: GochiHand;
+    src:url('../fonts/GochiHand-Regular.ttf');
+  
+  }
+  @font-face{
+    font-family: GemunuLibret;
+    src:url('../fonts/GemunuLibret.ttf');
+  
+  }  
+  @font-face{
+    font-family: Liberation Mono;
+    src:url('../fonts/Liberation-Mono.ttf');
+  
+  }
+:root {
+    --dark-grey: #232323; 
+    --dark-white: #ffffff; 
+    --light-grey: #e0e0e0;
+    --light-white:#000000;
+    --imprint-text: #444444;
+    --nav-height: 80px;
+    --font-main: Liberation Mono;
+    --font-compliment: Montserrat;
+    --font-hand: GochiHand;
+    --font-markers: GemunuLibret;
+    --fs-ansi: 6px;
+    --fs1: 12px;
+    --fs2: 13px;
+    --fs3: 15px;
+    --fs5: 70px;
+
+}
