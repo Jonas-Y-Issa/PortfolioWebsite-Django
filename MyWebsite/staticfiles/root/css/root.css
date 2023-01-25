@@ -6,20 +6,21 @@ html, body {
 } 
 .option img{
   width: 75%;
-}
-img:hover{
-  transition: transform 0.7s ease-in-out;
-  transition-duration: 0.7s;
+  transition: transform 0.4s ease-in-out;
   transition-timing-function: ease-in-out;
+}
+.option:hover img{
+  transform: scale(1.1);
+  transition-duration: 0.4s;
   transition-delay: 0s;
-  transition-property: transform;
-
 }
 .option {
   position: absolute;
   display: flex;
   justify-content: center;
+  transition: background-color .8s;
   flex-wrap: wrap;
+  width: 50%;
   top: 0;
   bottom: 0;
 }
@@ -33,6 +34,7 @@ img:hover{
 }
 #ASP {
   left: 0;
+  overflow: hidden;
   right: 50%;
   background-color: rgb(70, 70, 70);
 }
@@ -41,11 +43,11 @@ img:hover{
 }
 #ASP:hover {
   background-color: var(--light-grey);
-  transition: background-color .4s;
   text-decoration: underline; 
 }
 #Django {
   left: 50%;
+  overflow: hidden;
   right: 0;
   background-color: rgb(68, 183, 139);
 }
@@ -54,7 +56,6 @@ img:hover{
 }
 #Django:hover {
   background-color: rgb(51, 51, 51);
-  transition: background-color .4s;
   text-decoration: underline; 
 }
 #Django:hover img{
