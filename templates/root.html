@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+{% for style in styles %}<link rel="stylesheet" type="text/css" href="{{stat}}root/css/{{style}}">
+{% endfor %}
+</head>
+
+<body class="dark-mode">
+
+<div id='menuChoiceContainer'>
+  <a href="/ASP" class="option" id="ASP">
+    <img src="{{stat}}root/images/csharp_dotnet_button_icon_151936.svg" class="center"></img>
+  </a>
+  <a href="/Django/" class="option" id="Django">
+    <img src="{{stat}}root/images/django-svgrepo-com.svg"></img>
+
+    <footer class="framework_footer">
+    <!-- <img src="{{stat}}root/images/gunicorn_logo_icon_170045.svg"></img> -->
+
+    </footer>
+  </a>
+  
+</div>
+  
+</div>
+</body>
