@@ -43,7 +43,7 @@ An example of tasks.json for this project can be found in the parent repo which 
 
 ```Shell
 # Secure Copy Build to Pi
-    scp Django-Portfolio/Website [user]@[website.com]:~/
+    scp Django-Portfolio [user]@[website.com]:~/
 ```
 
 ### RaspberryPi
@@ -130,5 +130,6 @@ Create a Service file on your Pi and run it using
 # Check Running Stats
     docker stats
 # Run Image in a container in Interactive mode
-    docker run -it --rm django-portfolio-image:latest
+    docker run -it --rm django-portfolio-image:latest django-portfolio-container
+    docker exec -it django-portfolio-container sh
 ```
