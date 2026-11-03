@@ -23,6 +23,8 @@ Currently Running @ <https://developerjonas.com/Django>
 
 ### Recommended
 
+#### - Install
+Docker, Sqlite3, dotnet cli, dotnet ef
 #### - General Tips
 
 For faster development it is recommended to setup these commands into a build script, this can be done in azure or even something as simple as tasks.json if youre using VS Code.  
