@@ -8,6 +8,24 @@ Currently Running @ <https://developerjonas.com/Django>
 
 ![ksnip_20230119-150824](https://user-images.githubusercontent.com/110714003/213353015-9f0cab28-845e-4e02-9ce1-3397e5c52c7b.png)
 
+## Editing the design
+
+Edit the source stylesheets in these folders:
+
+- `myapp/static/base/css/`: shared styles, header, intro, sections, and footer. Change fonts and default colors in `Variables.css`, and light-theme colors in `Dark-mode.css`.
+- `myapp/static/homepage/css/`: projects, slideshow controls, about, skills, and the rotating word cube (`3dCube.css`).
+- `rootPage/static/root/css/root.css`: the framework selection page.
+
+`templates/base.html` loads the shared styles. `templates/Index.html` and `templates/root.html` load their page-specific styles in the `head` block.
+
+`staticfiles/` contains generated deployment copies. Make changes in the source folders above; Django's development server serves them directly. Regenerate deployment assets with `python manage.py collectstatic --noinput`.
+
+## Toolkit content
+
+The toolkit uses the `Skills` records in the database and remains editable through Django admin. `myapp/fixtures/toolkit.json` contains the six groups curated from the local project collection: languages, web/APIs, apps/games, data/AI, infrastructure, and testing/automation.
+
+To apply this snapshot to another database, run `python manage.py loaddata toolkit`. It updates toolkit records 1–6; it does not change project or about content. The site does not scan your local project folders at runtime.
+
 ## For CI/CD Pipeline Please see Parent Repo
 
 ## Setup

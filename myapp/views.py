@@ -1,6 +1,6 @@
 import os
+import re
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.conf import settings
 from django.http import FileResponse, HttpRequest, HttpResponse
 from django.views.decorators.cache import cache_control
@@ -27,24 +27,27 @@ def base():
     return(base_array)
 
 def index(request):
-    path=(STAT_DIR / "staticfiles/homepage")
-    css_list = os.listdir(path / "css")   
-    scripts_list = os.listdir(path / "scripts")   
-    images_list = os.listdir(path / "images")   
-    app_list = Apps.objects.all()
-    project_db = Project.objects.all()
-    skill_list = Skills.objects.all()
-    about_list = About.objects.all()
-    return render(request, 'Index.html',
-     {'styles': css_list,
-      'js_script': scripts_list,
-       'images': images_list,
-         'stat': STATIC_URL,
-         'apps':app_list,
-         'projects':project_db,
-         'skills': skill_list,
-         'about':about_list,
-         'base': base()})
+    skills = [
+        {
+            "title": skill.title.rstrip(":"),
+            "items": [
+                item.strip()
+                for item in re.split(r"[|\r\n]+", skill.description)
+                if item.strip()
+            ],
+        }
+        for skill in Skills.objects.order_by("pk")
+    ]
+    return render(
+        request,
+        "Index.html",
+        {
+            "apps": Apps.objects.order_by("pk"),
+            "projects": Project.objects.order_by("inc", "pk"),
+            "skills": skills,
+            "about": About.objects.order_by("pk"),
+        },
+    )
 
 @require_GET
 @cache_control(max_age=60 * 60 * 24, immutable=True, public=True)  # one day

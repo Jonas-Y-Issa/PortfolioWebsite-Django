@@ -1,23 +1,11 @@
-@font-face{
-    font-family: Montserrat;
-    src:url('../fonts/Montserrat.ttf');
-  
-  }
-  @font-face{
-    font-family: GochiHand;
-    src:url('../fonts/GochiHand-Regular.ttf');
-  
-  }
-  @font-face{
-    font-family: GemunuLibret;
-    src:url('../fonts/GemunuLibret.ttf');
-  
-  }  
-  @font-face{
-    font-family: Liberation Mono;
-    src:url('../fonts/Liberation-Mono.ttf');
-  
-  }
+/* Legacy font aliases follow the shared Helvetica / EB Garamond pairing. */
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../fonts/EBGaramond.ttf") format("truetype");
+    font-weight: 400 800;
+    font-style: normal;
+    font-display: swap;
+}
 :root {
     --dark-grey: #232323; 
     --dark-white: #ffffff; 
@@ -25,10 +13,10 @@
     --light-white:#000000;
     --imprint-text: #444444;
     --nav-height: 80px;
-    --font-main: Liberation Mono;
-    --font-compliment: Montserrat;
-    --font-hand: GochiHand;
-    --font-markers: GemunuLibret;
+    --font-main: var(--body-font, Helvetica, "Helvetica Neue", Arial, sans-serif);
+    --font-compliment: var(--accent-font, "EB Garamond", Georgia, serif);
+    --font-hand: var(--font-compliment);
+    --font-markers: var(--font-compliment);
     --fs-ansi: 6px;
     --fs1: 12px;
     --fs2: 13px;

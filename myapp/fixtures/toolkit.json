@@ -1,0 +1,50 @@
+[
+  {
+    "model": "myapp.skills",
+    "pk": 1,
+    "fields": {
+      "title": "LANGUAGES",
+      "description": "Python | C# | JavaScript | TypeScript | Dart | Rust | SQL | HTML & CSS | Bash"
+    }
+  },
+  {
+    "model": "myapp.skills",
+    "pk": 2,
+    "fields": {
+      "title": "WEB & APIS",
+      "description": "Django | Django REST Framework | ASP.NET Core | Entity Framework Core | React | Next.js | Node.js"
+    }
+  },
+  {
+    "model": "myapp.skills",
+    "pk": 3,
+    "fields": {
+      "title": "APPS & GAMES",
+      "description": "Flutter | Firebase / Firestore | MonoGame | Dart FFI"
+    }
+  },
+  {
+    "model": "myapp.skills",
+    "pk": 4,
+    "fields": {
+      "title": "DATA & AI",
+      "description": "PostgreSQL | SQLite | SQL Server | NumPy | pandas | SciPy | Matplotlib | Jupyter | llama.cpp"
+    }
+  },
+  {
+    "model": "myapp.skills",
+    "pk": 5,
+    "fields": {
+      "title": "INFRASTRUCTURE",
+      "description": "Docker | Docker Compose | Nginx | Linux / systemd | Azure | Bicep | Terraform"
+    }
+  },
+  {
+    "model": "myapp.skills",
+    "pk": 6,
+    "fields": {
+      "title": "TESTING & AUTOMATION",
+      "description": "Playwright | xUnit | unittest | Selenium | Beautiful Soup | Git"
+    }
+  }
+]

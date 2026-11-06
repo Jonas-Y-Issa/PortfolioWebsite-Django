@@ -1,84 +1,31 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-} 
-.option img{
-  width: 75%;
-  transition: transform 0.4s ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-.option:hover img{
-  transform: scale(1.1);
-  transition-duration: 0.4s;
-  transition-delay: 0s;
-}
-.option {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  transition: background-color .8s;
-  flex-wrap: wrap;
-  width: 50%;
-  top: 0;
-  bottom: 0;
-}
+/* root: root styles. */
 
-.option span {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+.gateway { padding-block: 85px 100px; }
+.gateway > .shell-command { margin-top: 40px; }
+.gateway h1 { margin-top: 20px; font-size: clamp(48px, 5.7vw, 80px); line-height: 1.12; letter-spacing: -.065em; font-weight: 500; }
+.gateway-intro { margin-top: 25px; color: var(--muted); font-size: 14px; }
+.gateway-options { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 45px; }
+.gateway-option { border: 1px solid var(--line); background: var(--surface-soft); padding: 30px; transition: border-color .2s, transform .2s; }
+.gateway-option:hover { border-color: var(--accent); transform: translateY(-4px); }
+.gateway-option-top { display: flex; align-items: center; justify-content: space-between; }
+.gateway-arrow { color: var(--accent); font-size: 25px; }
+.gateway-option img { height: 55px; width: auto; max-width: 160px; margin-block: 22px; object-fit: contain; object-position: left; }
+[data-theme="dark"] .gateway-django img { filter: grayscale(1) brightness(0) invert(.9); }
+.gateway-option h2 { font-size: clamp(22px, 2.5vw, 34px); }
+.gateway-option h2 span { color: var(--accent); }
+.gateway-option p { color: var(--muted); font-size: 12px; margin-top: 14px; }
+.gateway-cta { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 21px; margin-top: 30px; color: var(--accent); font: 12px var(--body-font); }
+.gateway-footnote { color: var(--faint); font: 10px/1.8 var(--body-font); margin-top: 25px; }
+.gateway-footnote span { margin-right: 7px; }
+@media (max-width: 820px) {
+  .gateway { padding-block: 55px 70px; }
+  .gateway-options { gap: 18px; }
+  .gateway-option { padding: 23px; }
+  .gateway-option h2 { font-size: 25px; }
 }
-#ASP {
-  left: 0;
-  overflow: hidden;
-  right: 50%;
-  background-color: rgb(70, 70, 70);
-}
-#ASP:hover img{
-  filter: invert(100%) hue-rotate(280deg);
-}
-#ASP:hover {
-  background-color: var(--light-grey);
-  text-decoration: underline; 
-}
-#Django {
-  left: 50%;
-  overflow: hidden;
-  right: 0;
-  background-color: rgb(68, 183, 139);
-}
-#Django img{
-  filter: sepia(79%) hue-rotate(86deg) brightness(118%) contrast(119%);
-}
-#Django:hover {
-  background-color: rgb(51, 51, 51);
-  text-decoration: underline; 
-}
-#Django:hover img{
-  filter: none;
-}
-
-
-.framework_footer{
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 0px;
-  width: 100%;
-}
-.root_footer{
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 10%;
-  bottom: 0px;
-}
-.root_footer img{
-  height: 60%;
-  bottom: 0px;
+@media (max-width: 520px) {
+  .gateway h1 { font-size: 43px; }
+  .gateway-intro { font-size: 12px; }
+  .gateway-options { grid-template-columns: 1fr; }
+  .gateway-footnote { font-size: 9px; }
 }

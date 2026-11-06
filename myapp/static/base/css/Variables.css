@@ -1,51 +1,34 @@
-@font-face{
-    font-family: Montserrat;
-    src:url('../fonts/Montserrat.ttf');
-  
-  }
-  @font-face{
-    font-family: GochiHand;
-    src:url('../fonts/GochiHand-Regular.ttf');
-  
-  }
-  @font-face{
-    font-family: GemunuLibret;
-    src:url('../fonts/GemunuLibret.ttf');
-  
-  }  
-  @font-face{
-    font-family: Liberation Mono;
-    src:url('../fonts/Liberation-Mono.ttf');
-  
-  }
-:root {
-    --dark-grey: #232323; 
-    --dark-grey-section: #1f1f1f;
-    --dark-white: #ffffff; 
-    --light-grey: #e0e0e0;
-    --light-grey-section: #cccccc;
-    --light-white:#000000;
-    --green-bright: #00ff9a;
-    --green-dark: #04AA6D;
-    --red-bright: #df5853;
-    --red-dark: #b13f3b;
-    --imprint-text: #444444;
-    --nav-height: 80px;
-    --font-main: Liberation Mono;
-    --font-compliment: Montserrat;
-    --font-hand: GochiHand;
-    --font-markers: GemunuLibret;
-    --fs-ansi: 6px;
-    --fs1: 12px;
-    --fs2: 13px;
-    --fs3: 15px;
-    --fs5: 70px;
-    --fs-header: 50px;
-    --fs-sub-header: 70px;
-    --mode-speed: 1s;
-    --mode-speed-background: 2s;
-    --left-pad: 100px;
-    --svg-height: 30px;
-    --img-size: 400px;
+/* Variables: base styles. */
 
+@font-face {
+  font-family: "Liberation Mono";
+  src: url("../fonts/Liberation-Mono.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../fonts/EBGaramond.ttf") format("truetype");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  color-scheme: dark;
+  --bg: #111513;
+  --surface: #191e1b;
+  --surface-soft: #141916;
+  --text: #eff2eb;
+  --muted: #a0aaa2;
+  --faint: #78877d;
+  --accent: #87e8ab;
+  --contact-accent: #d97832;
+  --accent-ink: #11271a;
+  --line: #303b33;
+  --line-soft: #232d26;
+  --header: rgba(17, 21, 19, .94);
+  --body-font: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --accent-font: "EB Garamond", Georgia, serif;
+  --nav-font: "Liberation Mono", "Courier New", monospace;
 }

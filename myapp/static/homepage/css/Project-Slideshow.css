@@ -1,85 +1,26 @@
-/* The dots/bullets/indicators */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: var(--light-white);
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .active, .dot:hover {
-    background-color: var(--red-bright);
-    height: 25px;
-  }
-  
+/* Project-Slideshow: homepage styles. */
 
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    color: var(--red-dark);
-    font-weight: bold;
-    font-size: 80px;
-    transition: 0.3s ease;
-    border-radius: 3px 0px 0px 3px;
-    user-select: none;
-    rotate: 90deg;
-    display: block;
+.project-tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.project-tab { display: flex; gap: 9px; padding: 19px 15px; align-items: flex-start; text-align: left; border: none; border-right: 1px solid var(--line-soft); border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--muted); font: 11px/1.7 var(--body-font); transition: background .2s, color .2s; }
+.project-tab:last-child { border-right: 0; }
+.project-tab:hover { background: var(--surface); color: var(--text); }
+.project-tab.is-active { color: var(--accent); background: var(--surface); border-bottom-color: var(--accent); }
+.tab-number { color: var(--faint); font-size: 9px; padding-top: 1px; }
+.tab-arrow { margin-left: auto; font-size: 13px; }
+.project-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 17px 26px; border-top: 1px solid var(--line); color: var(--faint); font: 10px/1.5 var(--body-font); }
+.project-footer [data-project-current] { color: var(--accent); }
+.counter-divider { margin-inline: 13px; }
+.project-arrows { display: flex; gap: 8px; }
+.project-arrows .icon-button { width: 36px; height: 36px; font-size: 19px; }
+@media (max-width: 1100px) {
+  .project-tab { padding: 15px 10px; font-size: 9px; gap: 6px; }
+  .tab-arrow { display: none; }
 }
-.next {
-    padding-left: 15px;
-    border-radius: 0 6px 6px 0;
+@media (max-width: 820px) {
+  .project-tabs { display: flex; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+  .project-tab { flex: 0 0 175px; padding: 17px 14px; font-size: 10px; }
+  .project-hint { display: none; }
 }
-.prev {
-    padding-right: 15px;
-    border-radius: 0 6px 6px 0;
+@media (max-width: 520px) {
+  .project-footer { padding: 14px 20px; }
 }
-.prev:hover, .next:hover {
-    color: var(--red-bright);
-}
-.prev:hover{
-    transform: translateX(-5px);
-}
-
-.next:hover{
-    transform: translateX(5px);
-}
-@media only screen and (max-width: 300px) {
-    .prev, .next{font-size: 11px}
-  }
-
-
-
-
- 
-  .fade-left {
-    animation-name: fade-left;
-    animation-duration: 1s;
-    transform:translateX(0%);
-
-  }
-  @keyframes fade-left {
-    from {
-      transform:translateY(-50%);
-
-    } 
-    to {
-      transform:translateX(0%);
-    }
-  }
-
-  .fade-right {
-    animation-name: fade-right;
-    animation-duration: 1s;
-    transform:translateX(0%);
-
-  }
-  @keyframes fade-right {
-    from {
-      transform:translateY(50%);
-    } 
-    to {
-      transform:translateX(0%);
-    }
-  }
