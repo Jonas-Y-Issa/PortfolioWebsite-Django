@@ -1,24 +1,43 @@
+# Environment files and local credentials.
 .env
 .env.*
 !.env.example
+!.env.*.example
+/.aws/
+
+# Python virtual environments and caches.
 env/
 venv/
 .venv/
 websiteVEnv/
-*.sqlite3
-*.sqlite3-*
-*.db
-*.db-*
 *.py[cod]
 __pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Local databases, SQLite sidecars, and private backups.
+*.sqlite3
+*.sqlite3-*
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+/.local-backups/
+
+# Generated static files and runtime logs.
 staticfiles/
 # Django supplies admin assets; copied versions override installed security fixes.
 myapp/static/admin/
+*.log
 
-# Local editor state, operating-system metadata, and tool caches.
+# Test coverage output.
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Local editor state and operating-system metadata.
 .idea/
 .DS_Store
-.pytest_cache/
-.ruff_cache/
-.coverage
-htmlcov/
+*~
+*.kate-swp
