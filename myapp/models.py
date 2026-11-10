@@ -30,6 +30,22 @@ class Project(models.Model):
         return self.extLink
 
 
+class ProjectImage(models.Model):
+    project = models.ForeignKey(Project, related_name="gallery", on_delete=models.CASCADE)
+    image = models.CharField(
+        max_length=200,
+        help_text="Image filename relative to homepage/images/.",
+    )
+    caption = models.CharField(max_length=150)
+    position = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["position", "pk"]
+
+    def __str__(self):
+        return f"{self.project.title}: {self.caption}"
+
+
 class Skills(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()

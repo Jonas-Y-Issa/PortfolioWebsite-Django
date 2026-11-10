@@ -25,7 +25,7 @@ def index(request: HttpRequest) -> HttpResponse:
         request,
         "Index.html",
         {
-            "projects": Project.objects.order_by("inc", "pk"),
+            "projects": Project.objects.order_by("inc", "pk").prefetch_related("gallery"),
             "skills": skills,
             "about": About.objects.order_by("pk"),
         },

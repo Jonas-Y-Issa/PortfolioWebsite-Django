@@ -1,7 +1,7 @@
 /* Project browser tabs and navigation controls. */
 
-.project-tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
-.project-tab { display: flex; gap: 9px; padding: 19px 15px; align-items: flex-start; text-align: left; border: none; border-right: 1px solid var(--line-soft); border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--muted); font: 11px/1.7 var(--body-font); transition: background .2s, color .2s; }
+.project-tabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-bottom: 1px solid var(--line); }
+.project-tab { display: flex; min-width: 0; gap: 9px; padding: 19px 15px; align-items: flex-start; text-align: left; overflow-wrap: anywhere; border: none; border-right: 1px solid var(--line-soft); border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--muted); font: 11px/1.7 var(--body-font); transition: background .2s, color .2s; }
 .project-tab:last-child { border-right: 0; }
 .project-tab:hover { background: var(--surface); color: var(--text); }
 .project-tab.is-active { color: var(--accent); background: var(--surface); border-bottom-color: var(--accent); }

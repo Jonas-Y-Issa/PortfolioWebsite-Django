@@ -43,6 +43,8 @@ Edit source files under `myapp/static/`. Stylesheet names use lowercase words se
 
 Projects, about text, and skills remain editable through Django admin. Project and about image filenames refer to files in `myapp/static/homepage/images/`. Keep these images when cleaning assets; their references live in the database.
 
+Projects can also have a screenshot slideshow. Add gallery rows on the project's admin page with an image filename, caption, and position. Multiple images cycle every five seconds with previous/next, play/pause, thumbnails, keyboard controls, and touch swiping. Cycling pauses while hovered or out of view, and stops on manual navigation, keyboard focus, or a reduced-motion preference. Projects without gallery rows use their existing cover image. Add image files to `myapp/static/homepage/images/`, then run `collectstatic` for deployment. Files placed only in `staticfiles/` are generated output and can be cleared during deployment.
+
 The toolkit uses the `Skills` records in the database. `myapp/fixtures/toolkit.json` contains six curated groups: languages, web/APIs, apps/games, data/AI, infrastructure, and testing/automation.
 
 To apply this snapshot to another database, run `python manage.py loaddata toolkit`. It updates toolkit records 1–6; it does not change project or about content. The site does not scan your local project folders at runtime. The older `Apps` model remains available in admin to preserve existing data.

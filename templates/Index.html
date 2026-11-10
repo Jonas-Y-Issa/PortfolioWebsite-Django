@@ -78,7 +78,43 @@
     </div>
     {% for proj in projects %}
     <article class="project-panel" id="project-{{ forloop.counter }}" role="tabpanel" aria-labelledby="project-tab-{{ forloop.counter }}" tabindex="0" data-project-panel>
+      {% with gallery=proj.gallery.all %}
+      {% if gallery %}
+      <div class="project-gallery" data-project-gallery role="group" aria-roledescription="carousel" aria-label="{{ proj.title }} screenshots">
+        <div class="project-gallery-viewport" data-gallery-viewport>
+          {% for screenshot in gallery %}
+          <figure class="project-screenshot" id="project-{{ proj.pk }}-image-{{ forloop.counter }}" data-gallery-slide data-gallery-caption="{{ screenshot.caption|default:proj.title }}" role="group" aria-roledescription="slide" aria-label="Screenshot {{ forloop.counter }} of {{ gallery|length }}">
+            <a class="project-screenshot-frame" href="{% static 'homepage/images/' %}{{ screenshot.image }}" target="_blank" rel="noopener noreferrer" aria-label="Open {{ screenshot.caption|default:proj.title }} at full size (new tab)">
+              <img src="{% static 'homepage/images/' %}{{ screenshot.image }}" alt="{{ screenshot.caption|default:proj.title }}" loading="lazy" decoding="async">
+            </a>
+            <figcaption>{{ screenshot.caption|default:proj.title }}</figcaption>
+          </figure>
+          {% endfor %}
+        </div>
+        <div class="project-gallery-controls" data-gallery-controls hidden>
+          <div class="project-slideshow-bar">
+            <p class="project-slideshow-counter"><span class="sr-only">Screenshot </span><span data-gallery-current>01</span><span aria-hidden="true"> / </span><span class="sr-only"> of </span><span data-gallery-total>{{ gallery|length|stringformat:"02d" }}</span></p>
+            <button class="project-slideshow-play" type="button" data-gallery-play>Play slideshow</button>
+            <div class="project-slideshow-arrows">
+              <button class="icon-button" type="button" data-gallery-direction="-1" aria-label="Previous screenshot">←</button>
+              <button class="icon-button" type="button" data-gallery-direction="1" aria-label="Next screenshot">→</button>
+            </div>
+          </div>
+          <div class="project-thumbnails" role="group" aria-label="Choose a screenshot">
+            {% for screenshot in gallery %}
+            <button class="project-thumbnail" type="button" data-gallery-select aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="project-{{ proj.pk }}-image-{{ forloop.counter }}" aria-label="Show screenshot {{ forloop.counter }}: {{ screenshot.caption|default:proj.title }}">
+              <img src="{% static 'homepage/images/' %}{{ screenshot.image }}" alt="" loading="lazy" decoding="async">
+              <span aria-hidden="true">{{ forloop.counter|stringformat:"02d" }}</span>
+            </button>
+            {% endfor %}
+          </div>
+          <p class="project-gallery-status" data-gallery-status aria-live="polite" aria-atomic="true"></p>
+        </div>
+      </div>
+      {% else %}
       <div class="project-image">{% if proj.image %}<img src="{% static 'homepage/images/' %}{{ proj.image }}" alt="{{ proj.title }}" loading="lazy" decoding="async">{% else %}<div class="project-image-placeholder" aria-hidden="true">&lt; / &gt;</div>{% endif %}<span class="project-image-label">PROJECT / {{ forloop.counter|stringformat:"02d" }}</span></div>
+      {% endif %}
+      {% endwith %}
       <div class="project-copy">
         <p class="eyebrow project-preface">{% if proj.preface == 'This Wesbite:' %}THE PROJECT BEHIND THIS PAGE{% else %}{{ proj.preface }}{% endif %}</p>
         <h3>{{ proj.title }}</h3><p class="project-summary">{{ proj.description|truncatewords:42 }}</p>

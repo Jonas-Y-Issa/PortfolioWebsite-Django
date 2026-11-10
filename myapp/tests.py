@@ -13,7 +13,7 @@ from django.test import RequestFactory, SimpleTestCase, TestCase, override_setti
 from django.urls import reverse
 
 from MyWebsite.middleware import TrustedProxyHeadersMiddleware
-from myapp.models import About, Project
+from myapp.models import About, Project, ProjectImage
 
 
 class ProjectLinkSecurityTests(TestCase):
@@ -56,6 +56,57 @@ class ProjectLinkSecurityTests(TestCase):
         response = self.client.get(reverse("index"))
         self.assertContains(response, "&lt;script&gt;alert(1)&lt;/script&gt;")
         self.assertNotContains(response, "<script>alert(1)</script>")
+
+
+class ProjectGalleryTests(TestCase):
+    def setUp(self):
+        self.project = Project.objects.create(
+            inc=1,
+            preface="Test",
+            title="Chess",
+            extLink="https://example.com/chess",
+            description="A chess game.",
+            image="legacy-cover.png",
+        )
+
+    def test_homepage_gallery_is_ordered_and_prefetched(self):
+        for image, position in [("last.png", 2), ("first.png", 0), ("second.png", 0)]:
+            ProjectImage.objects.create(
+                project=self.project, image=image, caption=image, position=position,
+            )
+        other = Project.objects.create(
+            inc=2, preface="Test", title="Other", extLink="https://example.com/other",
+            description="Another project.", image="other.png",
+        )
+        ProjectImage.objects.create(project=other, image="other.png", caption="Other")
+
+        response = self.client.get(reverse("index"))
+
+        self.assertEqual(response.status_code, 200)
+        with self.assertNumQueries(0):
+            galleries = [
+                [screenshot.image for screenshot in project.gallery.all()]
+                for project in response.context["projects"]
+            ]
+        self.assertEqual(galleries, [["first.png", "second.png", "last.png"], ["other.png"]])
+
+    def test_gallery_captions_are_escaped(self):
+        ProjectImage.objects.create(
+            project=self.project,
+            image="gallery.png",
+            caption='<script>alert("gallery")</script>',
+        )
+
+        response = self.client.get(reverse("index"))
+
+        self.assertContains(response, "homepage/images/gallery.png")
+        self.assertContains(response, "&lt;script&gt;alert(&quot;gallery&quot;)&lt;/script&gt;")
+        self.assertNotContains(response, '<script>alert("gallery")</script>')
+        self.assertNotContains(response, "homepage/images/legacy-cover.png")
+
+    def test_project_without_gallery_keeps_its_cover(self):
+        response = self.client.get(reverse("index"))
+        self.assertContains(response, "homepage/images/legacy-cover.png")
 
 
 class ProductionSettingsTests(SimpleTestCase):
