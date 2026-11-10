@@ -1,4 +1,4 @@
-/* Intro: base styles. */
+/* Homepage introduction and terminal profile. */
 
 .hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); align-items: center; column-gap: 64px; padding-top: 0px; padding-bottom: 60px; }
 .hero-copy { min-width: 0; }
