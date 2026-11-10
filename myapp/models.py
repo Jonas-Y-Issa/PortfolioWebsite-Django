@@ -8,8 +8,8 @@ project_url_validator = URLValidator(schemes=["http", "https"])
 
 class About(models.Model):
     description = models.TextField()
-    image = models.ImageField()
-    image_desc = models.CharField(max_length=100)
+    image = models.ImageField(blank=True)
+    image_desc = models.CharField(max_length=100, blank=True)
 
 
 class Project(models.Model):

@@ -128,8 +128,8 @@
 </div></section>
 <section class="section about-section container" id="about" aria-labelledby="about-heading">
   <div class="section-heading"><div><p class="section-index">02 / THE PERSON BEHIND THE CODE</p><h2 id="about-heading">A developer.<br>A maker. <span class="accent">A little of both.</span></h2></div></div>
-  {% for a in about %}<div class="about-grid">
-    <figure class="about-portrait">{% if a.image %}<img src="{% static 'homepage/images/' %}{{ a.image }}" alt="Jonas Issa in the Swiss Alps" loading="lazy" decoding="async" width="1472" height="1104">{% endif %}<figcaption><span aria-hidden="true">↳</span> {{ a.image_desc }}</figcaption></figure>
+  {% for a in about %}<div class="about-grid{% if not a.image %} about-grid--text-only{% endif %}">
+    {% if a.image %}<figure class="about-portrait"><img src="{% static 'homepage/images/' %}{{ a.image }}" alt="Jonas Issa" loading="lazy" decoding="async" width="1472" height="1104">{% if a.image_desc %}<figcaption><span aria-hidden="true">↳</span> {{ a.image_desc }}</figcaption>{% endif %}</figure>{% endif %}
     <div class="about-copy"><p class="shell-command"><span>~/about</span> $ cat story.txt</p><div class="about-description">{{ a.description|linebreaks }}</div><p class="about-note">The common thread? Taking things apart, figuring them out, and making something of my own.</p></div>
   </div>{% empty %}<div class="about-copy"><p>I'm Jonas, a software developer and maker based in Sydney. My projects explore software, websites, servers, and the physical world.</p><a class="text-link" href="#contact">Say hello ↗</a></div>{% endfor %}
 </section>

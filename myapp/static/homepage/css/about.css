@@ -2,6 +2,7 @@
 
 .about-section .section-heading { margin-bottom: 50px; }
 .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 75px; align-items: center; }
+.about-grid--text-only { display: block; max-width: 760px; }
 .about-grid + .about-grid { margin-top: 60px; }
 .about-portrait { position: relative; margin: 0; }
 .about-portrait::before { content: ""; position: absolute; top: -10px; left: -10px; width: 44px; height: 44px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }

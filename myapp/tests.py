@@ -11,6 +11,7 @@ from django.contrib.staticfiles import finders
 from django.core.exceptions import ImproperlyConfigured, ValidationError
 from django.db import connection
 from django.db.migrations.executor import MigrationExecutor
+from django.forms import modelform_factory
 from django.http import HttpResponse
 from django.test import RequestFactory, SimpleTestCase, TestCase, override_settings
 from django.urls import reverse
@@ -235,6 +236,59 @@ class ChessResultsRemovalMigrationTests(TestCase):
         self.migration.remove_chess_results(self.apps, connection.schema_editor())
         self.assertFalse(self.Project.objects.exists())
         self.assertFalse(self.ProjectImage.objects.exists())
+
+
+class AboutPortraitRemovalTests(TestCase):
+    def setUp(self):
+        self.migration = import_module("myapp.migrations.0014_remove_about_portrait")
+        self.apps = MigrationExecutor(connection).loader.project_state(
+            ("myapp", "0013_remove_chess_results")
+        ).apps
+        self.About = self.apps.get_model("myapp", "About")
+
+    def test_only_retired_portrait_content_is_cleared_and_repeating_is_safe(self):
+        retired = self.About.objects.create(
+            description="Keep my biography.", image="profile.jpeg",
+            image_desc=self.migration.RETIRED_CAPTION,
+        )
+        custom_caption = self.About.objects.create(
+            description="Keep this biography too.", image="profile.jpeg",
+            image_desc="A separately edited caption.",
+        )
+        unrelated = self.About.objects.create(
+            description="Another biography.", image="other.jpeg",
+            image_desc=self.migration.RETIRED_CAPTION,
+        )
+        original_unrelated = self.About.objects.filter(pk=unrelated.pk).values().get()
+
+        for _ in range(2):
+            self.migration.remove_about_portrait(self.apps, connection.schema_editor())
+
+        retired.refresh_from_db()
+        custom_caption.refresh_from_db()
+        self.assertEqual(str(retired.image), "")
+        self.assertEqual(retired.image_desc, "")
+        self.assertEqual(retired.description, "Keep my biography.")
+        self.assertEqual(str(custom_caption.image), "")
+        self.assertEqual(custom_caption.image_desc, "A separately edited caption.")
+        self.assertEqual(custom_caption.description, "Keep this biography too.")
+        self.assertEqual(self.About.objects.filter(pk=unrelated.pk).values().get(), original_unrelated)
+        self.assertEqual(self.About.objects.count(), 3)
+
+    def test_empty_database_is_left_empty(self):
+        self.migration.remove_about_portrait(self.apps, connection.schema_editor())
+        self.assertFalse(self.About.objects.exists())
+
+    def test_about_form_can_save_a_biography_without_an_image_or_caption(self):
+        AboutForm = modelform_factory(About, fields=("description", "image", "image_desc"))
+        form = AboutForm(data={"description": "A biography without a photograph."})
+
+        self.assertTrue(form.is_valid(), form.errors)
+        about = form.save()
+        about.refresh_from_db()
+        self.assertEqual(about.description, "A biography without a photograph.")
+        self.assertEqual(str(about.image), "")
+        self.assertEqual(about.image_desc, "")
 
 
 class ProductionSettingsTests(SimpleTestCase):

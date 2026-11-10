@@ -43,9 +43,11 @@ Edit source files under `myapp/static/`. Stylesheet names use lowercase words se
 
 Projects, about text, and skills remain editable through Django admin. Project and about image filenames refer to files in `myapp/static/homepage/images/`. Keep these images when cleaning assets; their references live in the database.
 
+About photos and captions are optional. Entries without a photo display the about text without an empty image column.
+
 Projects can also have a screenshot slideshow. Add gallery rows on the project's admin page with an image filename, caption, and position. Multiple images cycle every five seconds with previous/next, play/pause, thumbnails, keyboard controls, and touch swiping. Cycling pauses while hovered or out of view, and stops on manual navigation, keyboard focus, or a reduced-motion preference. Projects without gallery rows use their existing cover image. Add image files to `myapp/static/homepage/images/`, then run `collectstatic` for deployment. Files placed only in `staticfiles/` are generated output and can be cleared during deployment.
 
-Migrations `0010` and `0011` add gallery support, attach the chess screenshots, and remove the retired Pi-hosting project. Migrations `0012` and `0013` remove the colour-selection and match-results screenshots, leaving gameplay and the main menu. These content updates match existing records and do not create sample content in an empty database. Back up an existing database before applying content migrations; their content changes are irreversible through Django migrations.
+Migrations `0010` and `0011` add gallery support, attach the chess screenshots, and remove the retired Pi-hosting project. Migrations `0012` and `0013` remove the colour-selection and match-results screenshots, leaving gameplay and the main menu. Migration `0014` removes the retired Felsensteg/Birg portrait while preserving the about text. These content updates match existing records and do not create sample content in an empty database. Back up an existing database before applying content migrations; their content changes are irreversible through Django migrations.
 
 The toolkit uses the `Skills` records in the database. `myapp/fixtures/toolkit.json` contains six curated groups: languages, web/APIs, apps/games, data/AI, infrastructure, and testing/automation.
 
