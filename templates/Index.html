@@ -83,7 +83,7 @@
         <p class="eyebrow project-preface">{% if proj.preface == 'This Wesbite:' %}THE PROJECT BEHIND THIS PAGE{% else %}{{ proj.preface }}{% endif %}</p>
         <h3>{{ proj.title }}</h3><p class="project-summary">{{ proj.description|truncatewords:42 }}</p>
         {% if proj.description|wordcount > 42 %}<details class="project-details"><summary>Read the story <span aria-hidden="true">+</span></summary><div>{{ proj.description|linebreaks }}</div></details>{% endif %}
-        {% if proj.extLink %}<a class="project-link" href="{{ proj.extLink }}" target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">↗</span></a>{% endif %}
+        {% with project_url=proj.public_url %}{% if project_url %}<a class="project-link" href="{{ project_url }}" target="_blank" rel="noopener noreferrer">Explore project <span aria-hidden="true">↗</span></a>{% endif %}{% endwith %}
       </div>
     </article>{% endfor %}
     <div class="project-footer" data-project-controls><p><span data-project-current>01</span><span class="counter-divider">/</span><span data-project-total>{{ projects|length|stringformat:"02d" }}</span></p><span class="project-hint">A few things I've put my mind to.</span><div class="project-arrows"><button class="icon-button" type="button" aria-label="Previous project" data-project-direction="-1">←</button><button class="icon-button" type="button" aria-label="Next project" data-project-direction="1">→</button></div></div>

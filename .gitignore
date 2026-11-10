@@ -1,6 +1,16 @@
 .env
+.env.*
+!.env.example
 env/
-.sqlite3
-db.sqlite3
-.pyc
-__pychache__/
+venv/
+.venv/
+websiteVEnv/
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.py[cod]
+__pycache__/
+staticfiles/
+# Django supplies admin assets; copied versions override installed security fixes.
+myapp/static/admin/

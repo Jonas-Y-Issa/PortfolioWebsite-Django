@@ -1,2 +1,6 @@
-Django==4.2.3
-gunicorn==21.2.0
+# Audited application versions; Dependabot proposes reviewed security updates.
+Django==5.2.19
+gunicorn==26.2.0
+python-decouple==3.8
+whitenoise==6.12.0
+Pillow==13.0.0

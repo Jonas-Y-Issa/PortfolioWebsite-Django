@@ -1,3 +1,136 @@
-from django.test import TestCase
+import importlib.util
+import os
+from pathlib import Path
+from unittest.mock import patch
 
-# Create your tests here.
+from decouple import Config, RepositoryEmpty
+from django.conf import settings
+from django.contrib import admin
+from django.contrib.staticfiles import finders
+from django.core.exceptions import ImproperlyConfigured, ValidationError
+from django.http import HttpResponse
+from django.test import RequestFactory, SimpleTestCase, TestCase, override_settings
+from django.urls import reverse
+
+from MyWebsite.middleware import TrustedProxyHeadersMiddleware
+from myapp.models import About, Project
+
+
+class ProjectLinkSecurityTests(TestCase):
+    def create_project(self, url):
+        return Project.objects.create(
+            inc=1, preface="Test", title="<script>alert('title')</script>",
+            extLink=url, description="<script>alert('description')</script>", image="",
+        )
+
+    def test_unsafe_links_from_imports_are_not_rendered(self):
+        for url in ["javascript:alert(1)", "data:text/html,<script>alert(1)</script>",
+                    "//example.com", "ftp://example.com", "https://example.com\n"]:
+            with self.subTest(url=url):
+                project = self.create_project(url)
+                self.assertEqual(project.public_url, "")
+                response = self.client.get(reverse("index"))
+                self.assertEqual(response.status_code, 200)
+                self.assertNotContains(response, 'class="project-link"')
+                project.delete()
+
+    def test_http_links_keep_their_url_and_text_is_escaped(self):
+        for url in ["https://example.com/project?a=1&b=2", "http://example.com/project"]:
+            with self.subTest(url=url):
+                project = self.create_project(url)
+                self.assertEqual(project.public_url, url)
+                response = self.client.get(reverse("index"))
+                self.assertContains(response, 'class="project-link"')
+                self.assertContains(response, "&lt;script&gt;alert(&#x27;title&#x27;)&lt;/script&gt;")
+                self.assertNotContains(response, "<script>alert(")
+                project.delete()
+
+    def test_admin_rejects_non_http_project_links(self):
+        field = Project._meta.get_field("extLink")
+        for url in ["javascript:alert(1)", "ftp://example.com"]:
+            with self.subTest(url=url), self.assertRaises(ValidationError):
+                field.clean(url, Project())
+
+    def test_about_content_is_escaped(self):
+        About.objects.create(description="<script>alert(1)</script>", image="", image_desc="Test")
+        response = self.client.get(reverse("index"))
+        self.assertContains(response, "&lt;script&gt;alert(1)&lt;/script&gt;")
+        self.assertNotContains(response, "<script>alert(1)</script>")
+
+
+class ProductionSettingsTests(SimpleTestCase):
+    def load_settings(self, **environment):
+        path = Path(settings.BASE_DIR) / "MyWebsite/settings.py"
+        spec = importlib.util.spec_from_file_location("isolated_settings", path)
+        module = importlib.util.module_from_spec(spec)
+        with patch.dict(os.environ, environment, clear=True), patch("decouple.config", Config(RepositoryEmpty())):
+            spec.loader.exec_module(module)
+        return module
+
+    def production_environment(self):
+        from django.core.management.utils import get_random_secret_key
+        return {"DEBUG": "False", "SECRET_KEY": get_random_secret_key(),
+                "DJANGO_ALLOWED_HOSTS": "portfolio.example.com"}
+
+    def test_production_requires_secret_and_hosts(self):
+        with self.assertRaises(ImproperlyConfigured):
+            self.load_settings(DEBUG="False")
+        for hosts in ["", "*"]:
+            environment = self.production_environment() | {"DJANGO_ALLOWED_HOSTS": hosts}
+            with self.subTest(hosts=hosts), self.assertRaises(ImproperlyConfigured):
+                self.load_settings(**environment)
+
+    def test_repeated_secret_is_rejected(self):
+        environment = self.production_environment() | {"SECRET_KEY": "x" * 60}
+        with self.assertRaises(ImproperlyConfigured):
+            self.load_settings(**environment)
+
+    def test_false_is_false_and_cookies_are_secure(self):
+        for false_value in ["False", "0"]:
+            module = self.load_settings(**(self.production_environment() | {"DEBUG": false_value}))
+            self.assertFalse(module.DEBUG)
+            self.assertTrue(module.SECURE_SSL_REDIRECT)
+            self.assertTrue(module.SESSION_COOKIE_SECURE)
+            self.assertTrue(module.CSRF_COOKIE_SECURE)
+
+    def test_proxy_requires_exact_trusted_peer_addresses(self):
+        environment = self.production_environment() | {"DJANGO_TRUST_PROXY": "True"}
+        for peers in ["", "*", "0.0.0.0/0"]:
+            with self.subTest(peers=peers), self.assertRaises(ImproperlyConfigured):
+                self.load_settings(**(environment | {"DJANGO_TRUSTED_PROXY_IPS": peers}))
+        module = self.load_settings(**(environment | {"DJANGO_TRUSTED_PROXY_IPS": "172.30.75.2 127.0.0.1 ::1"}))
+        self.assertEqual(module.SECURE_PROXY_SSL_HEADER, ("HTTP_X_FORWARDED_PROTO", "https"))
+
+
+@override_settings(DJANGO_TRUSTED_PROXY_IPS=["172.30.75.2", "127.0.0.1"],
+                   SECURE_PROXY_SSL_HEADER=("HTTP_X_FORWARDED_PROTO", "https"))
+class TrustedProxyTests(SimpleTestCase):
+    def request_through_middleware(self, peer):
+        request = RequestFactory().get("/", REMOTE_ADDR=peer, HTTP_X_FORWARDED_PROTO="https")
+        middleware = TrustedProxyHeadersMiddleware(lambda request: HttpResponse(str(request.is_secure())))
+        return middleware(request)
+
+    def test_untrusted_peer_cannot_spoof_https(self):
+        for peer in ["172.30.75.3", "198.51.100.8", "", "invalid"]:
+            with self.subTest(peer=peer):
+                self.assertEqual(self.request_through_middleware(peer).content, b"False")
+
+    def test_gateway_and_healthcheck_headers_work(self):
+        for peer in ["172.30.75.2", "127.0.0.1"]:
+            with self.subTest(peer=peer):
+                self.assertEqual(self.request_through_middleware(peer).content, b"True")
+
+
+class StaticSupplyChainTests(SimpleTestCase):
+    def test_admin_assets_come_from_installed_django(self):
+        admin_directory = Path(admin.__file__).resolve().parent
+        for name in ["admin/js/core.js", "admin/js/vendor/jquery/jquery.js",
+                     "admin/js/vendor/select2/select2.full.min.js"]:
+            with self.subTest(asset=name):
+                path = Path(finders.find(name)).resolve()
+                self.assertTrue(path.is_relative_to(admin_directory))
+
+    def test_templates_do_not_load_compromised_cdn(self):
+        for template in (Path(settings.BASE_DIR) / "templates").rglob("*.html"):
+            with self.subTest(template=template.name):
+                self.assertNotIn("polyfill.io", template.read_text())
