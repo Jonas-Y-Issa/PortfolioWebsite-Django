@@ -14,3 +14,11 @@ __pycache__/
 staticfiles/
 # Django supplies admin assets; copied versions override installed security fixes.
 myapp/static/admin/
+
+# Local editor state, operating-system metadata, and tool caches.
+.idea/
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/

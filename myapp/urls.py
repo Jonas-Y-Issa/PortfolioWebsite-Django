@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import index, favicon
+
+from . import views
 
 urlpatterns = [
-    path('', index, name='index'),
-    path("favicon.ico", favicon),
+    path("", views.index, name="index"),
+    path("favicon.ico", views.favicon),
 ]

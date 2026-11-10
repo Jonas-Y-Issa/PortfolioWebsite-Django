@@ -57,7 +57,6 @@ SECURE_HSTS_PRELOAD = False
 
 INSTALLED_APPS = [
     'myapp.apps.MyappConfig',
-    'rootPage.apps.RootpageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,7 +142,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Installed apps expose their own static directories automatically.
-STATICFILES_DIRS = [BASE_DIR / "physGenViewer" / "static"]
 STATIC_ROOT = Path(config("DJANGO_STATIC_ROOT", default=str(BASE_DIR / "staticfiles")))
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
