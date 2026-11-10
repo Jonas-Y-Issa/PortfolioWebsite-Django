@@ -23,7 +23,6 @@ Open <http://127.0.0.1:8000/>. Local development defaults to `DEBUG=True` and lo
 - `templates/`: the shared `base.html`, homepage `Index.html`, and error page.
 - `myapp/static/base/`: shared styles, fonts, favicon, and `portfolio.js` interactions.
 - `myapp/static/homepage/`: section styles and portfolio images.
-- `experiments/`: the archived physics template and stylesheet. These drafts have no routes and are excluded from template discovery, static collection, and the production image.
 
 `MyWebsite/settings.py` is the single maintained configuration. The small top-level `settings.py`, `urls.py`, `wsgi.py`, and `asgi.py` modules delegate to it for older deployment commands. Database migrations retain their original app and model names.
 
