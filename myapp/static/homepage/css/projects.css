@@ -44,11 +44,14 @@
 .project-preface { font-size: 9px; letter-spacing: 1px; color: var(--faint); }
 .project-copy h3 { font-size: clamp(22px, 2.3vw, 32px); font-weight: 500; letter-spacing: -.04em; line-height: 1.3; margin-top: 16px; }
 .project-summary { margin-top: 20px; color: var(--muted); font-size: 14px; line-height: 1.9; overflow-wrap: anywhere; }
+.project-copy:has(.project-details[open]) .project-summary { display: none; }
 .project-details { margin-top: 15px; font-size: 14px; color: var(--muted); }
 .project-details summary { display: flex; gap: 30px; align-items: center; width: fit-content; padding-block: 9px; cursor: pointer; list-style: none; font: 10px/1.5 var(--body-font); color: var(--text); }
 .project-details summary::-webkit-details-marker { display: none; }
-.project-details summary span { color: var(--accent); font-size: 20px; transition: transform .2s; }
-.project-details[open] summary span { transform: rotate(45deg); }
+.project-details-close, .project-details[open] .project-details-read { display: none; }
+.project-details[open] .project-details-close { display: inline; }
+.project-details-icon { color: var(--accent); font-size: 20px; transition: transform .2s; }
+.project-details[open] .project-details-icon { transform: rotate(45deg); }
 .project-details > div { padding-block: 12px; overflow-wrap: anywhere; }
 .project-details p + p { margin-top: 12px; }
 .project-link { display: inline-flex; gap: 30px; align-items: center; margin-top: 22px; padding-block: 10px; border-bottom: 1px solid var(--accent); color: var(--accent); font: 11px/1.5 var(--body-font); }
