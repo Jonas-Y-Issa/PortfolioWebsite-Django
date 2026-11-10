@@ -1,5 +1,6 @@
 import importlib.util
 import os
+from importlib import import_module
 from pathlib import Path
 from unittest.mock import patch
 
@@ -8,6 +9,8 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.staticfiles import finders
 from django.core.exceptions import ImproperlyConfigured, ValidationError
+from django.db import connection
+from django.db.migrations.executor import MigrationExecutor
 from django.http import HttpResponse
 from django.test import RequestFactory, SimpleTestCase, TestCase, override_settings
 from django.urls import reverse
@@ -107,6 +110,131 @@ class ProjectGalleryTests(TestCase):
     def test_project_without_gallery_keeps_its_cover(self):
         response = self.client.get(reverse("index"))
         self.assertContains(response, "homepage/images/legacy-cover.png")
+
+
+class PortfolioContentMigrationTests(TestCase):
+    def setUp(self):
+        self.migration = import_module("myapp.migrations.0011_refresh_portfolio_projects")
+        self.apps = MigrationExecutor(connection).loader.project_state(
+            ("myapp", "0010_projectimage")
+        ).apps
+        self.Project = self.apps.get_model("myapp", "Project")
+        self.ProjectImage = self.apps.get_model("myapp", "ProjectImage")
+
+    def create_project(self, **fields):
+        values = {
+            "inc": 1,
+            "preface": "Test",
+            "title": "A project",
+            "extLink": "https://example.com/project",
+            "description": "Keep this original content.",
+            "image": "original.png",
+        }
+        return self.Project.objects.create(**(values | fields))
+
+    def apply_content_migration(self):
+        self.migration.refresh_projects(self.apps, connection.schema_editor())
+
+    def test_chess_gallery_is_seeded_once_and_existing_content_is_preserved(self):
+        chess = self.create_project(extLink=f"{self.migration.CHESS_URL.upper()}/")
+        existing = self.ProjectImage.objects.create(
+            project=chess, image="custom.png", caption="Keep this screenshot", position=10,
+        )
+        unrelated = self.create_project(extLink="https://example.com/unrelated")
+        original = self.Project.objects.filter(pk=unrelated.pk).values().get()
+
+        self.apply_content_migration()
+        self.apply_content_migration()
+
+        chess.refresh_from_db()
+        self.assertEqual(str(chess.image), "chess-gameplay.png")
+        self.assertEqual(chess.description, "Keep this original content.")
+        self.assertEqual(
+            list(chess.gallery.values_list("image", "caption", "position")),
+            [
+                ("chess-gameplay.png", "Four-player chess in progress", 0),
+                ("chess-menu.png", "Main menu", 1),
+                ("chess-colour-selection.png", "Player colour selection", 2),
+                ("chess-results.png", "Match results", 3),
+                ("custom.png", "Keep this screenshot", 10),
+            ],
+        )
+        self.assertTrue(self.ProjectImage.objects.filter(pk=existing.pk).exists())
+        self.assertEqual(self.Project.objects.filter(pk=unrelated.pk).values().get(), original)
+
+    def test_only_the_identified_pi_portfolio_is_deleted(self):
+        pi_fields = {
+            "title": "Portfolio Website Github",
+            "image": "pi.jpeg",
+            "extLink": f"{self.migration.OLD_PORTFOLIO_URL.upper()}/",
+        }
+        obsolete = self.create_project(**pi_fields)
+        preserved = [
+            self.create_project(**(pi_fields | {"title": "Another portfolio"})),
+            self.create_project(**(pi_fields | {"image": "another.png"})),
+            self.create_project(**(pi_fields | {"extLink": "https://example.com/unrelated"})),
+        ]
+        original = list(self.Project.objects.exclude(pk=obsolete.pk).order_by("pk").values())
+
+        self.apply_content_migration()
+
+        self.assertFalse(self.Project.objects.filter(pk=obsolete.pk).exists())
+        self.assertEqual(list(self.Project.objects.order_by("pk").values()), original)
+        self.assertEqual(self.Project.objects.count(), len(preserved))
+
+    def test_empty_database_is_left_empty(self):
+        self.apply_content_migration()
+        self.assertFalse(self.Project.objects.exists())
+        self.assertFalse(self.ProjectImage.objects.exists())
+
+
+class ChessResultsRemovalMigrationTests(TestCase):
+    def setUp(self):
+        self.migration = import_module("myapp.migrations.0013_remove_chess_results")
+        self.apps = MigrationExecutor(connection).loader.project_state(
+            ("myapp", "0012_remove_chess_colour_selection")
+        ).apps
+        self.Project = self.apps.get_model("myapp", "Project")
+        self.ProjectImage = self.apps.get_model("myapp", "ProjectImage")
+
+    def test_only_chess_results_are_removed_and_repeating_is_safe(self):
+        chess_urls = [
+            "https://github.com/Jonas-Y-Issa/4-Way-Chess",
+            "https://github.com/Jonas-Y-Issa/4-Way-Chess/".upper(),
+        ]
+        removed_ids = []
+        for url in chess_urls + ["https://example.com/another-project"]:
+            project = self.Project.objects.create(
+                inc=1, preface="Test", title="Chess", extLink=url,
+                description="Keep the project.", image="chess-gameplay.png",
+            )
+            for image, position in [
+                ("chess-gameplay.png", 0),
+                ("chess-menu.png", 1),
+                ("chess-results.png", 3),
+                ("custom.png", 3),
+            ]:
+                screenshot = self.ProjectImage.objects.create(
+                    project=project, image=image, caption=image, position=position,
+                )
+                if url in chess_urls and image == "chess-results.png":
+                    removed_ids.append(screenshot.pk)
+        original_projects = list(self.Project.objects.order_by("pk").values())
+        preserved_images = list(
+            self.ProjectImage.objects.exclude(pk__in=removed_ids).order_by("pk").values()
+        )
+
+        for _ in range(2):
+            self.migration.remove_chess_results(self.apps, connection.schema_editor())
+
+        self.assertFalse(self.ProjectImage.objects.filter(pk__in=removed_ids).exists())
+        self.assertEqual(list(self.ProjectImage.objects.order_by("pk").values()), preserved_images)
+        self.assertEqual(list(self.Project.objects.order_by("pk").values()), original_projects)
+
+    def test_empty_database_is_left_empty(self):
+        self.migration.remove_chess_results(self.apps, connection.schema_editor())
+        self.assertFalse(self.Project.objects.exists())
+        self.assertFalse(self.ProjectImage.objects.exists())
 
 
 class ProductionSettingsTests(SimpleTestCase):
