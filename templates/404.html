@@ -1,1 +1,20 @@
-Page not Found
+{% extends "base.html" %}
+
+{% block title %}Page not found — Jonas Issa{% endblock %}
+
+{% block head %}
+  <style>
+    .error-page { display: grid; align-content: center; justify-items: start; gap: 24px; min-height: 60vh; }
+    .error-page h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 500; letter-spacing: -.055em; line-height: 1.15; }
+    .error-description { max-width: 55ch; color: var(--muted); }
+  </style>
+{% endblock %}
+
+{% block content %}
+<section class="section container error-page" aria-labelledby="error-heading">
+  <p class="section-index">404 / PAGE NOT FOUND</p>
+  <h1 id="error-heading">Page not found<span class="accent">.</span></h1>
+  <p class="error-description">This page may have moved, or the address may be incorrect. Head back to the portfolio to keep exploring.</p>
+  <a class="button button-primary" href="{% url 'index' %}">Back to home <span aria-hidden="true">→</span></a>
+</section>
+{% endblock %}

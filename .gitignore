@@ -26,6 +26,8 @@ __pycache__/
 
 # Generated static files and runtime logs.
 staticfiles/
+/build/
+/.wrangler/
 # Django supplies admin assets; copied versions override installed security fixes.
 myapp/static/admin/
 *.log
